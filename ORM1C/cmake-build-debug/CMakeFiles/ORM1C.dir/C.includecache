@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dushn/Desktop/ORM1C/file_handeling.c
+stdio.h
+-
+sys/socket.h
+-
+stdlib.h
+-
+string.h
+-
+zconf.h
+-
+file_handeling.h
+/home/dushn/Desktop/ORM1C/file_handeling.h
+
+/home/dushn/Desktop/ORM1C/file_handeling.h
+
+/home/dushn/Desktop/ORM1C/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+netdb.h
+-
+zconf.h
+-
+pthread.h
+/home/dushn/Desktop/ORM1C/pthread.h
+file_handeling.h
+/home/dushn/Desktop/ORM1C/file_handeling.h
+

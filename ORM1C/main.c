@@ -65,6 +65,8 @@ int main(int argc, char *argv[]) {
     printf("Hello, World!\n");
     pthread_t  t,t1;
     int newsockfd;
+    int newsockfd1;
+
 char buffer[BUFFER_SIZE];
     if(argc<3){
 
@@ -85,6 +87,13 @@ char buffer[BUFFER_SIZE];
     }
 
    newsockfd= conection(argv[1],argv[2]);
+    if(newsockfd<0){
+
+        printf("socket failed%d \n",newsockfd);
+        exit(1);
+    }
+    create_file(newsockfd);
+    newsockfd1= conection(argv[1],argv[2]);
     if(newsockfd<0){
 
         printf("socket failed%d \n",newsockfd);
@@ -117,14 +126,16 @@ char buffer[BUFFER_SIZE];
     }
 */
 
-  create_file(newsockfd);
+//  create_file(newsockfd);
  //   free(servinfo);
 
 
    // pthread_join(t,NULL);
   //  pthread_join(t1,NULL);
+    printf("%d %d ",newsockfd,newsockfd1);
     printf("sve proslo kako treba\n");
     close(newsockfd);
+    close(newsockfd1);
 
 
 

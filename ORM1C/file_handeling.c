@@ -138,8 +138,11 @@ void create_file(int socket){
     FILE *fp;
     char buffer[BUFFER_SIZE];
     char buffer_2[BUFFER_SIZE];
+    char buffer_3[BUFFER_SIZE];
     ssize_t ret=0;
-    long file_size=0;
+    int file_size=0;
+    char *filename_b=malloc(64);
+    char *filename_e=malloc(64);
    static int koliko_bytes=0;
     char *filename=malloc(64);
     ret = recv(socket,buffer,BUFFER_SIZE, 0);
@@ -186,8 +189,8 @@ void create_file(int socket){
 
 
 
-    sscanf(buffer,"%li %s",&file_size,filename);
-    printf("File size %li",file_size);
+    sscanf(buffer,"%s %d %s %s",filename,&file_size,filename_b,filename_e);
+    printf("File size %d",file_size);
     //ret = recv(socket,buffer,BUFFER_SIZE, 0);
    // printf("Return value : [%d]",(int)ret);
     if(ret<0){
@@ -210,8 +213,13 @@ void create_file(int socket){
     }
 
     if(file_size>0){
-
-        fp =fopen(filename,"w+");
+        memset(buffer_3,0,BUFFER_SIZE);
+        strcat(buffer_3,filename);
+        strcat(buffer_3,".");
+        strcat(buffer_3,filename_b);
+        strcat(buffer_3,"-");
+        strcat(buffer_3,filename_e);
+        fp =fopen(buffer_3,"w+");
         if (fp == -1) {
             perror("open");
             exit(EXIT_FAILURE);
@@ -313,5 +321,7 @@ void create_file(int socket){
         }
     }*/
     free(filename);
+    free(filename_e);
+    free(filename_b);
 
 };

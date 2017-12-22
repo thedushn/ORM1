@@ -1,20 +1,18 @@
+
+
+#include "file_handeling.h"
+
 #include <stdio.h>
-#include"stdio.h"
-#include <inttypes.h>
-#include <stdlib.h>
-#include <netdb.h>
-#include <string.h>
 #include <errno.h>
 #include <wait.h>
-#include <pthread.h>
-#include"pthread.h"
-#include"sys/socket.h"
-#include "file_handeling.h"
+#include <bits/socket.h>
+#include <netdb.h>
+#include <string.h>
 #include <stdlib.h>
-
+#include <time.h>
+#include "pthread.h"
 #include <arpa/inet.h>
-#include <unistd.h>
-
+#include <math.h>
 #define  BUFFER_SIZE 1400
 pthread_mutex_t m;
 void sigchld_handler(int s)
@@ -34,24 +32,16 @@ void *get_in_addr(struct sockaddr *sa)
 
     return &(((struct sockaddr_in6*)sa)->sin6_addr);
 }
+void conection(int * socket_new,char *port){
+
+
+}
 int main(int argc, char *argv[]) {
 
-
-    pthread_t t, t2;
-    int sockfd=0;
-    int new_fd;  // listen on sock_fd, new connection on new_fd
-    struct addrinfo hints, *servinfo, *p;
-    struct sockaddr_storage their_addr; // connector's address information
-    socklen_t sin_size;
-    struct sigaction sa;
-    int yes = 1;
-    char s[INET6_ADDRSTRLEN];
-    int rv, ret, ret2;
+    int num_pthreads=2;
+    pthread_t t[num_pthreads], t2;
     char buffer[BUFFER_SIZE];
-    memset(&hints, 0, sizeof hints);
-    hints.ai_family = AF_UNSPEC;
-    hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags = AI_PASSIVE; // use my IP
+    int ret2=0;
 
     if (argc < 2) {
 
@@ -60,9 +50,26 @@ int main(int argc, char *argv[]) {
     }
     // uint16_t portnum=(uint16_t)atoi(argv[1]);
 
+
+    int sockfd=0;
+    int new_fd;  // listen on sock_fd, new connection on new_fd
+    struct addrinfo hints, *servinfo, *p;
+    struct sockaddr_storage their_addr; // connector's address information
+    socklen_t sin_size;
+    struct sigaction sa;
+    int yes = 1;
+    char s[INET6_ADDRSTRLEN];
+    int rv;
+
+    memset(&hints, 0, sizeof hints);
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags = AI_PASSIVE; // use my IP
+
     if ((rv = getaddrinfo(NULL, argv[1], &hints, &servinfo)) != 0) {
         fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
-        return 1;
+        // return 1;
+        exit(1);
     }
 
     // loop through all the results and bind to the first we can
@@ -112,19 +119,7 @@ int main(int argc, char *argv[]) {
     printf("server: waiting for connections...\n");
 
 
-    {  // main accept() loop
-        sin_size = sizeof their_addr;
-        new_fd = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
-        if (new_fd == -1) {
-            perror("accept");
 
-        }
-    }
-
-    inet_ntop(their_addr.ss_family,
-              get_in_addr((struct sockaddr *) &their_addr),
-              s, sizeof s);
-    printf("server: got connection from %s\n", s);
 
 
 
@@ -134,63 +129,89 @@ int main(int argc, char *argv[]) {
     long	file_size;
     fseek(fp, 0, SEEK_END);
     file_size = ftell(fp);
+   // file_size=15555;
     fseek(fp, 0, 0);
     sprintf(buffer,"%li",file_size);
     fclose(fp);
     /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
     printf("file_size %li \n",file_size);
-    int numb_packets;
-    if(((int)file_size/BUFFER_SIZE)>BUFFER_SIZE){
+    float numb_packets=0;
 
-        numb_packets=(((int)file_size/BUFFER_SIZE);
+    if((int)file_size>BUFFER_SIZE){
+
+        numb_packets=(((float)file_size/BUFFER_SIZE));
+    numb_packets=   ceilf(numb_packets);
     }
     else
     {
         numb_packets=1;
     }
 
+    int numb_bytes=(int)file_size/num_pthreads;
 
-   // recv_files(&new_fd);
+
+    struct data_s data_s1[num_pthreads];
+    for(int i=0;i<=0;i++){
+
+        strcpy(data_s1[i].filename,filename);
+        data_s1[i].file_size=(int)file_size;
+        data_s1[i].file_position_b=numb_bytes*i;
+        data_s1[i].file_position_e=numb_bytes;
+        data_s1[i].numb_packets=(int)numb_packets*(i+1);
+
+        {  // main accept() loop
+            sin_size = sizeof their_addr;
+            data_s1[i].socket = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
+            if (data_s1[i].socket == -1) {
+                perror("accept");
+
+            }
+        }
+
+        inet_ntop(their_addr.ss_family,
+                  get_in_addr((struct sockaddr *) &their_addr),
+                  s, sizeof s);
+        printf("server: got connection from %s\n", s);
+        pthread_create(&t[i],NULL,new_file,&data_s1[i]);
 
 
-     struct data_s *data_s1=calloc(1,sizeof(struct data_s));
+    }
+    for(int i=0;i<num_pthreads;i++){
+
+
+        pthread_join(t[i],NULL);
+    }
+
+
+
+/*     struct data_s *data_s1=calloc(num_pthreads,sizeof(struct data_s));
 
 
  strcpy(data_s1->filename,filename);
  data_s1->socket=new_fd;
     data_s1->file_size=(int)file_size;
-    data_s1->numb_packets=numb_packets;
-    data_s1->pack_number=1;
-ret2= pthread_create(&t2,NULL,send_files,&new_fd);
- if(ret2!=0){
+    data_s1->file_position_b=0;
+    data_s1->file_position_e=numb_bytes;
+    data_s1->numb_packets=(int)numb_packets;
+    data_s1->pack_number=1;*/
+//ret2= pthread_create(&t2,NULL,send_files,&new_fd);
+/* if(ret2!=0){
      // if( pthread_create(&t2, NULL, slanje, &info)){
      printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
      exit(1);
 
- }
- int  new_fd1=0;
- {  // main accept() loop
-     sin_size = sizeof their_addr;
-    new_fd1 = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
-     if (new_fd == -1) {
-         perror("accept");
+ }*/
 
-     }
- }
- inet_ntop(their_addr.ss_family,
-           get_in_addr((struct sockaddr *) &their_addr),
-           s, sizeof s);
- printf("server: got connection from %s\n", s);
 //  send_files(&new_fd);
-ret2=  pthread_create(&t,NULL,send_files,&new_fd1);
- if(ret2!=0){
+//ret2=  pthread_create(&t,NULL,send_files,&new_fd1);
+/* if(ret2!=0){
      // if( pthread_create(&t2, NULL, slanje, &info)){
      printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
      exit(1);
 
- }
- pthread_join(t,NULL);
- pthread_join(t2,NULL);
+ }*/
+/* pthread_join(t,NULL);
+ pthread_join(t2,NULL);*/
 
 
  if (pthread_mutex_init(&m, NULL) != 0) {
@@ -207,17 +228,17 @@ ret2=  pthread_create(&t,NULL,send_files,&new_fd1);
    // merge();
 
 /* here, do your time-consuming job */
-   /* struct data_s *data_s1=calloc(1,sizeof(struct data_s));
-    strcpy(data_s1->filename,filename);
-    data_s1->socket=new_fd;
-    ret2=  pthread_create(&t,NULL,file_handeling,data_s1);
+
+   // strcpy(data_s1->filename,filename);
+  //  data_s1->socket=new_fd;
+   /* ret2=  pthread_create(&t,NULL,file_handeling,data_s1);
     if(ret2!=0){
         // if( pthread_create(&t2, NULL, slanje, &info)){
         printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
         exit(1);
 
     }*/
-    pthread_join(t,NULL);
+   // pthread_join(t,NULL);
  //   file_handeling(new_fd);
 
     clock_t end = clock();
@@ -232,7 +253,7 @@ ret2=  pthread_create(&t,NULL,send_files,&new_fd1);
     pthread_mutex_destroy(&m);
     printf("file_size %li \n",file_size);
 
-    free(data_s1);
-    //close(sockfd);
+  //  free(data_s1);
+    close(sockfd);
 return 0;
 }

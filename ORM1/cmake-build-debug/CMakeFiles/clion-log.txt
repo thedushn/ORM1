@@ -1,4 +1,4 @@
-/home/dushn/clion/clion-2017.1.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dushn/Desktop/ORM1
+/home/dusan/clion-2017.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dusan/Desktop/ORM1
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/dushn/Desktop/ORM1/cmake-build-debug
+-- Build files have been written to: /home/dusan/Desktop/ORM1/cmake-build-debug

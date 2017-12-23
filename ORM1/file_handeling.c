@@ -18,6 +18,8 @@ void * new_file(void *data_temp){
         struct data_s data_s1;
         data_s1=  *((struct data_s *)data_temp);
         int socket=data_s1.socket;
+        static int koliko_bytes;
+    int koliko_treba;
         strcpy(filename,data_s1.filename);
 
 
@@ -27,14 +29,23 @@ void * new_file(void *data_temp){
             printf("open failed, errno = %d\n", errno);
             exit(1);
         }
-        fseek(fp, 0, data_s1.file_position_b);
+        fseek(fp, data_s1.file_position_b,SEEK_CUR );
+
+    if(data_s1.file_position_b!=0){
+       koliko_treba=data_s1.file_position_e-data_s1.file_position_b+1;
+    }
+    else{
+
+        koliko_treba=data_s1.file_position_e;
+    }
 
 
 
 
-        static int koliko_bytes;
-        int koliko_treba=data_s1.file_position_e-data_s1.file_position_b;
-    sprintf(buffer,"%s %d  %d %d" ,filename,koliko_treba,data_s1.file_position_b,data_s1.file_position_e);
+
+
+    sprintf(buffer,"%s %d  %d %d %d" ,filename,koliko_treba,data_s1.file_position_b,data_s1.file_position_e,data_s1.pack_number);
+    printf("Buffer %s \n",buffer);
     ssize_t ret= send(socket,buffer,BUFFER_SIZE,0);
     if(ret<BUFFER_SIZE) {
         size_t velicina = BUFFER_SIZE;
@@ -52,6 +63,7 @@ void * new_file(void *data_temp){
             }
         }
     }
+    printf("Return value %d\n",(int)ret);
 
     memset(buffer2,0,BUFFER_SIZE);
     ret_1 =recv(socket,buffer2,BUFFER_SIZE,0);
@@ -67,6 +79,7 @@ void * new_file(void *data_temp){
             printf("Buffer2 [%s]\n", buffer2);
 
             ret_1 = recv(socket, buffer2, velicina, 0);
+            printf("Return value %d\n",(int)ret_1);
             velicina -= ret_1;
             // koliko_bytes += ret_1;
 
@@ -81,6 +94,7 @@ void * new_file(void *data_temp){
                 exit(1);
             }
         }
+        printf("Return value %d\n",(int)ret_1);
 
     }
 
@@ -99,7 +113,7 @@ void * new_file(void *data_temp){
 
 
         if(koliko_treba<=0){
-            ////stigli do kraja file
+            printf("stigli do kraja file\n");
             memset(buffer,0,BUFFER_SIZE);
             strcpy(buffer,"end of file");
             ret_1=send(socket,buffer,BUFFER_SIZE,0);
@@ -118,7 +132,7 @@ void * new_file(void *data_temp){
                     koliko_bytes+=ret_1;
                     if (ret_1 < 0) {
 
-                        printf("error receing data\n %d", (int) ret_1);
+                        printf("error receving data\n %d", (int) ret_1);
                         fclose(fp);
                         exit(1);
                     }
@@ -130,7 +144,7 @@ void * new_file(void *data_temp){
             ret_1 =recv(socket,buffer,BUFFER_SIZE,0);
             if (ret_1 < 0) {
 
-                printf("error receing data\n %d", (int) ret_1);
+                printf("error receving data\n %d", (int) ret_1);
                 fclose(fp);
                 exit(1);
             }
@@ -154,7 +168,7 @@ void * new_file(void *data_temp){
             }
             if (strcmp(buffer, "stiglo sve") == 0) {
 
-                printf("proslo sve kako treba \n");
+                printf("Zatvaramo file \n");
                 fclose(fp);
                 break;
             }
@@ -168,18 +182,20 @@ void * new_file(void *data_temp){
 
 
             strncpy(buffer2,buffer,(size_t)koliko_treba);
+            koliko_treba-=koliko_treba;
 
         }
         else{
 
 
-            koliko_bytes-=nread;
+            koliko_treba-=nread;
             strcpy(buffer2,buffer);
         }
 
        // (size_t)(data_s1.file_position_e-data_s1.file_position_b)
          printf("Strlen Buf %d strlen buff2 %d\n",(int)strlen(buffer),(int)strlen(buffer2));
         printf("Buffer2 [%s]\n",buffer2);
+
 
 
 
@@ -239,11 +255,12 @@ void * new_file(void *data_temp){
         }
 
 
+
     }
 
 
 
-
+    printf("izasli smo iz thread\n");
         return 0;
 }
 void *recv_files(void *socket_tmp){

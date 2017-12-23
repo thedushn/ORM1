@@ -62,12 +62,16 @@ int  conection(char * argv1,char *argv2){
     return newsockfd;
 };
 int main(int argc, char *argv[]) {
-    printf("Hello, World!\n");
-    pthread_t  t,t1;
+
+
+    int num_threads=2;
+    pthread_t  t[num_threads],t1;
     int newsockfd;
     int newsockfd1;
-
-char buffer[BUFFER_SIZE];
+    pthread_attr_t attr;
+    char buffer[BUFFER_SIZE];
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     if(argc<3){
 
         printf("port not provided \n");
@@ -86,19 +90,64 @@ char buffer[BUFFER_SIZE];
 
     }
 
-   newsockfd= conection(argv[1],argv[2]);
+    int socket_num[num_threads];
+    for(int i=0;i<num_threads;i++) {
+
+
+        socket_num[i] = conection(argv[1], argv[2]);
+        if (socket_num[i] < 0) {
+
+            printf("socket failed%d \n", socket_num[i]);
+            exit(1);
+        }
+    }
+    for(int i=0;i<num_threads;i++){
+
+       /* int socket_num[num_threads];
+            socket_num[i]  =conection(argv[1],argv[2]);
+        if(socket_num[i]<0){
+
+            printf("socket failed%d \n",socket_num[i]);
+            exit(1);
+        }*/
+
+
+            printf("Socket %d\n",socket_num[i]);
+        int ret2=   pthread_create(&t[i],NULL,create_file,&socket_num[i]);
+        if(ret2!=0){
+            // if( pthread_create(&t2, NULL, slanje, &info)){
+            printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
+            exit(1);
+
+        }
+
+    }
+
+    void *status;
+    for(int i=0;i<num_threads;i++){
+
+
+        int rc= pthread_join(t[i],&status);
+        if (rc) {
+            printf("ERROR; return code from pthread_join() is %d\n", rc);
+            exit(-1);
+        }
+        printf("Main: completed join with thread %d having a status of %ld \n",i,(long)status);
+    }
+ /*  newsockfd= conection(argv[1],argv[2]);
     if(newsockfd<0){
 
         printf("socket failed%d \n",newsockfd);
         exit(1);
     }
-    create_file(newsockfd);
+    create_file(&newsockfd);
     newsockfd1= conection(argv[1],argv[2]);
     if(newsockfd<0){
 
         printf("socket failed%d \n",newsockfd);
         exit(1);
     }
+    create_file(&newsockfd1);*/
 
   //  send_files(&newsockfd);
 /*
@@ -132,10 +181,11 @@ char buffer[BUFFER_SIZE];
 
    // pthread_join(t,NULL);
   //  pthread_join(t1,NULL);
-    printf("%d %d ",newsockfd,newsockfd1);
+ //   merge(2);
+  //  printf("%d %d ",newsockfd,newsockfd1);
     printf("sve proslo kako treba\n");
-    close(newsockfd);
-    close(newsockfd1);
+   // close(newsockfd);
+   // close(newsockfd1);
 
 
 

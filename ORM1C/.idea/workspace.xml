@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main.c" description="/*  newsockfd= conection(argv[1],argv[2]);&#10;    if(..." line="104" />
+    <bookmark url="file://$PROJECT_DIR$/main.c" description="/*  newsockfd= conection(argv[1],argv[2]);&#10;    if(..." line="153" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -23,46 +23,63 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="108">
               <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="94" column="27" lean-forward="false" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fluffy2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/fluffy2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="917820">
-              <caret line="45891" column="41" lean-forward="false" selection-start-line="45891" selection-start-column="41" selection-end-line="45891" selection-end-column="41" />
+            <state relative-caret-position="112">
+              <caret line="177" column="27" lean-forward="true" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="file_handeling.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="log1.txt.0" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.0">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-759">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log.txt.0" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.0">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3318181">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="full.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/full.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file_handeling.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_handeling.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+            <state relative-caret-position="229">
+              <caret line="262" column="38" lean-forward="true" selection-start-line="262" selection-start-column="38" selection-end-line="262" selection-end-column="38" />
               <folding>
                 <element signature="e#41#59#0" expanded="true" />
               </folding>
@@ -73,18 +90,8 @@
       <file leaf-file-name="log.txt.004" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.004">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="90">
               <caret line="5" column="101" lean-forward="false" selection-start-line="5" selection-start-column="101" selection-end-line="5" selection-end-column="101" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stdlib.h" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/include/stdlib.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3640">
-              <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -93,8 +100,8 @@
       <file leaf-file-name="file_handeling.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_handeling.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+            <state relative-caret-position="108">
+              <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -108,17 +115,20 @@
       <find>mutex</find>
       <find>Return value</find>
       <find>string len of</find>
+      <find>get</find>
+      <find>end of file</find>
+      <find>strlen</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cmake-build-debug/fluffy2.txt" />
-        <option value="$PROJECT_DIR$/file_handeling.h" />
         <option value="$PROJECT_DIR$/cmake-build-debug/log.txt.004" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/file_handeling.h" />
         <option value="$PROJECT_DIR$/file_handeling.c" />
+        <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
   </component>
@@ -128,11 +138,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="992" />
-    <option name="y" value="24" />
-    <option name="width" value="928" />
-    <option name="height" value="951" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="75" />
+    <option name="y" value="-4" />
+    <option name="width" value="922" />
+    <option name="height" value="979" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -151,30 +161,18 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cmake-build-debug" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="ORM1C" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ORM1C" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ORM1C" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ORM1C" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
     </panes>
@@ -182,7 +180,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JSON" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TEST_RADI_slanje/TEST_cleaing up code /TEST/Client " />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,6 +195,24 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.ORM1C">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+    </configuration>
+    <configuration name="ORM1C" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="5555   127.0.0.1 192.168.122.70         " PASS_PARENT_ENVS_2="true" PROJECT_NAME="ORM1C" TARGET_NAME="ORM1C" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ORM1C" RUN_TARGET_NAME="ORM1C">
+      <envs />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="CLion_Remote" factoryName="GDB Remote Debug" remoteCommand="" symbolFile="" sysroot="">
       <method />
     </configuration>
@@ -292,20 +308,6 @@
       <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -379,14 +381,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ORM1C" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="5555   127.0.0.1 192.168.122.70         " PASS_PARENT_ENVS_2="true" PROJECT_NAME="ORM1C" TARGET_NAME="ORM1C" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ORM1C" RUN_TARGET_NAME="ORM1C">
-      <envs />
-      <method />
-    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.ORM1C" />
@@ -423,11 +417,14 @@
       <workItem from="1513856032644" duration="2357000" />
       <workItem from="1513934279387" duration="1112000" />
       <workItem from="1513942220746" duration="4606000" />
+      <workItem from="1513969979801" duration="1243000" />
+      <workItem from="1513971429970" duration="1736000" />
+      <workItem from="1513975796497" duration="15220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53802000" />
+    <option name="totallyTimeSpent" value="72001000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,18 +436,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="992" y="24" width="928" height="951" extended-state="4" />
+    <frame x="65" y="-4" width="1855" height="979" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3559978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12880044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32164448" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31924883" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36374268" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35093898" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45828295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44131455" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -464,27 +462,27 @@
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32160193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36286408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14852607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3548753" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3988304" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44248825" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -494,123 +492,45 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>277</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>14</line>
+          <line>129</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>64</line>
+          <line>179</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>169</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>229</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.c</url>
-          <line>134</line>
+          <line>184</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>147</line>
-          <option name="timeStamp" value="26" />
+          <line>73</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/file_handeling.c</url>
+          <line>419</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/file_handeling.c</url>
+          <line>321</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="31" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="buffer_3" language="ObjectiveC" />
+        <watch expression="buffer" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/fluffy2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="917820">
-          <caret line="45891" column="41" lean-forward="false" selection-start-line="45891" selection-start-column="41" selection-end-line="45891" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/fluffy2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85440">
-          <caret line="4272" column="17" lean-forward="false" selection-start-line="4272" selection-start-column="10" selection-end-line="4272" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/stdlib.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3640">
-          <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file_handeling.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file_handeling.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="84" column="45" lean-forward="false" selection-start-line="84" selection-start-column="45" selection-end-line="84" selection-end-column="45" />
-          <folding>
-            <element signature="e#41#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/fluffy2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85120">
@@ -623,7 +543,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -657,9 +612,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
           <caret line="81" column="17" lean-forward="false" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -677,7 +630,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -709,9 +697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1840">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -727,7 +713,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -761,9 +782,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1840">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -779,7 +798,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -813,9 +867,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1840">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +885,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -865,9 +952,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1460">
           <caret line="73" column="16" lean-forward="true" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -899,24 +984,51 @@
     </entry>
     <entry file="file:///usr/include/stdlib.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3640">
+        <state relative-caret-position="1980">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
+            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/fluffy2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="917820">
+        <state relative-caret-position="826038">
           <caret line="45891" column="41" lean-forward="false" selection-start-line="45891" selection-start-column="41" selection-end-line="45891" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file_handeling.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -930,7 +1042,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.004">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="90">
           <caret line="5" column="101" lean-forward="false" selection-start-line="5" selection-start-column="101" selection-end-line="5" selection-end-column="101" />
           <folding />
         </state>
@@ -943,29 +1055,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="108">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.223-446">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="94" column="27" lean-forward="false" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="2" column="96" lean-forward="false" selection-start-line="2" selection-start-column="96" selection-end-line="2" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.0-223">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/full.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file_handeling.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-759">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3318181">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/file_handeling.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+        <state relative-caret-position="229">
+          <caret line="262" column="38" lean-forward="true" selection-start-line="262" selection-start-column="38" selection-end-line="262" selection-end-column="38" />
           <folding>
             <element signature="e#41#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="177" column="27" lean-forward="true" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

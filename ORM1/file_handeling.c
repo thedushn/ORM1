@@ -398,7 +398,7 @@ void* file_handeling(void * socket_tmp){
     long	file_size;
 
 
-    fp=fopen(filename,"r");
+    fp=fopen(filename,"rb");
     fseek(fp, 0, SEEK_END);
     file_size = ftell(fp);
     fseek(fp, 0, 0);

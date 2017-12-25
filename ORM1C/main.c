@@ -43,6 +43,7 @@ int  conection(char * argv1,char *argv2){
 
     if (p == NULL) {
         // looped off the end of the list with no connection
+        free(servinfo);
         fprintf(stderr, "failed to connect\n");
         exit(2);
     }
@@ -65,13 +66,10 @@ int main(int argc, char *argv[]) {
 
 
     int num_threads=2;
-    pthread_t  t[num_threads],t1;
-    int newsockfd;
-    int newsockfd1;
-    pthread_attr_t attr;
-    char buffer[BUFFER_SIZE];
-    pthread_attr_init(&attr);
-    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+    pthread_t  t[num_threads];
+
+
+
     if(argc<3){
 
         printf("port not provided \n");
@@ -103,15 +101,6 @@ int main(int argc, char *argv[]) {
     }
     for(int i=0;i<num_threads;i++){
 
-       /* int socket_num[num_threads];
-            socket_num[i]  =conection(argv[1],argv[2]);
-        if(socket_num[i]<0){
-
-            printf("socket failed%d \n",socket_num[i]);
-            exit(1);
-        }*/
-
-
             printf("Socket %d\n",socket_num[i]);
         int ret2=   pthread_create(&t[i],NULL,create_file,&socket_num[i]);
         if(ret2!=0){
@@ -124,6 +113,7 @@ int main(int argc, char *argv[]) {
     }
 
     void *status;
+
     for(int i=0;i<num_threads;i++){
 
 
@@ -134,58 +124,15 @@ int main(int argc, char *argv[]) {
         }
         printf("Main: completed join with thread %d having a status of %ld \n",i,(long)status);
     }
- /*  newsockfd= conection(argv[1],argv[2]);
-    if(newsockfd<0){
-
-        printf("socket failed%d \n",newsockfd);
-        exit(1);
-    }
-    create_file(&newsockfd);
-    newsockfd1= conection(argv[1],argv[2]);
-    if(newsockfd<0){
-
-        printf("socket failed%d \n",newsockfd);
-        exit(1);
-    }
-    create_file(&newsockfd1);*/
-
-  //  send_files(&newsockfd);
-/*
- int ret2=   pthread_create(&t1,NULL,send_files,&newsockfd);
-    if(ret2!=0){
-        // if( pthread_create(&t2, NULL, slanje, &info)){
-        printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
-        exit(1);
-
-    }
-
-      int  newsockfd1= conection(argv[1],argv[2]);
-    if(newsockfd1<0){
-
-        printf("socket failed%d \n",newsockfd1);
-        exit(1);
-    }
-    //recv_files(&newsockfd);
-   ret2= pthread_create(&t,NULL,recv_files,&newsockfd1);
-    if(ret2!=0){
-        // if( pthread_create(&t2, NULL, slanje, &info)){
-        printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
-        exit(1);
-
-    }
-*/
-
-//  create_file(newsockfd);
- //   free(servinfo);
 
 
-   // pthread_join(t,NULL);
-  //  pthread_join(t1,NULL);
- //   merge(2);
-  //  printf("%d %d ",newsockfd,newsockfd1);
+
+
+
+    printf("ulazimo u merge\n");
+    merge(2,"log1.txt");
+
     printf("sve proslo kako treba\n");
-   // close(newsockfd);
-   // close(newsockfd1);
 
 
 

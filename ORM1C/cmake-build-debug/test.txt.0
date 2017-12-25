@@ -1,3 +1,0 @@
-A94533: g_object_new (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
-==10216==    by 0x517F984: ??? (in /usr/lib/x86_64-linux-gnu/libgtk-3.so.0.1800.9)
-==10216==    by 0x5A92896: ??? (in /usr/lib/x86_64-linux-gnu/

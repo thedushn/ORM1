@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/dusan/Desktop/ORM1/file_handeling.c
+/home/dushn/Desktop/ORM1/file_handeling.c
 errno.h
 -
 file_handeling.h
-/home/dusan/Desktop/ORM1/file_handeling.h
+/home/dushn/Desktop/ORM1/file_handeling.h
 
-/home/dusan/Desktop/ORM1/file_handeling.h
+/home/dushn/Desktop/ORM1/file_handeling.h
 stdio.h
 -
 sys/socket.h
@@ -26,9 +26,9 @@ dirent.h
 unistd.h
 -
 
-/home/dusan/Desktop/ORM1/main.c
+/home/dushn/Desktop/ORM1/main.c
 file_handeling.h
-/home/dusan/Desktop/ORM1/file_handeling.h
+/home/dushn/Desktop/ORM1/file_handeling.h
 stdio.h
 -
 errno.h
@@ -46,7 +46,7 @@ stdlib.h
 time.h
 -
 pthread.h
-/home/dusan/Desktop/ORM1/pthread.h
+/home/dushn/Desktop/ORM1/pthread.h
 arpa/inet.h
 -
 math.h

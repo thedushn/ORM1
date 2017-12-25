@@ -8,6 +8,7 @@
 #include <string.h>
 #include <zconf.h>
 #include <dirent.h>
+#include <errno.h>
 
 #include "file_handeling.h"
 
@@ -17,22 +18,23 @@ static int myCompare (const void * a, const void * b)
     return strcmp (*(const char **) a, *(const char **) b);
 }
 
-void sort(const char *arr[], int n)
+void sort( char *arr[], int n)
 {
     qsort (arr, n, sizeof (const char *), myCompare);
 }
-void merge (const int broj_thread){
+void merge (const int broj_thread,char *filename){
 
 
 
     DIR *dir;
     struct dirent *d_file;
     char cwd[1024];
-    char *names[broj_thread];
+    char *names[broj_thread+1];
+    names[broj_thread]=(char *) malloc(64);
 
     //char (*file_name_array)[64];
     getcwd(cwd, sizeof(cwd));
-    int i=0;
+    int t=0;
 
 
     if((dir  = opendir(cwd)) == NULL) {
@@ -43,18 +45,19 @@ void merge (const int broj_thread){
         // printf("%s\n", d_file->d_name);
         char *temp=malloc(256);
         char *temp1;
-        if( strncmp("test.txt",d_file->d_name,8/*strlen(filename)*/)==0){
+        if( strncmp(filename,d_file->d_name,8/*strlen(filename)*/)==0){
 
             strcpy(temp,d_file->d_name);
-            names[i]=(char *) malloc(64);
-            strcpy(names[i],d_file->d_name);
+            names[t]=(char *) malloc(64);
+            strcpy(names[t],d_file->d_name);
             temp1=strrchr(temp,'.');
-                i++;
+            printf("Names %s\n",names[t]);
+                t++;
             //  printf("TEMP %s\n",temp1);
             temp1=++temp1;
 
             printf("files %s\n",temp);
-            printf("Names %s\n",names[i]);
+
             printf("TEMP %s\n",temp1);
             int n=atoi(temp1);
             printf("N %d \n",n);
@@ -76,54 +79,95 @@ void merge (const int broj_thread){
         printf("Names %s\n",names[y]);
 
     }
-    printf("I %d\n",i);
+    printf("I %d\n",t);
     closedir(dir);
 
     // Open two files to be merged
-    FILE *fp1 = fopen("test.txt.0-223", "rb");
-    FILE *fp2 = fopen("test.txt.223-446", "rb");
-    char buffer[BUFFER_SIZE];
-    // Open file to store the result
-    FILE *fp3 = fopen("full.txt", "wb");
-    char c;
+    FILE *fp_temp1;
+ while((fp_temp1= fopen(names[1], "rb"))!=NULL){
+        FILE *fp_temp;
 
-    if (fp1 == NULL || fp2 == NULL || fp3 == NULL)
-    {
-        puts("Could not open files");
-        exit(0);
-    }
+        FILE *fp_final;
+        int errnum;
+        char buffer[BUFFER_SIZE];
+     static int brojac =2;
+     fp_temp= fopen(names[0], "rb");
+     printf("Trying to open %s\n",names[0]);
+     char *temp=malloc(256);
+     char *temp1;
+        if (fp_temp == NULL) {
 
-    //  fseek(fp3,0,SEEK_END);
-    // Copy contents of first file to file3.txt
+            free(temp);
+            errnum = errno;
+
+            fprintf(stderr, "Value of errno: %d\n", errno);
+            perror("Error printed by perror");
+            fprintf(stderr, "Error opening file: %s\n", strerror( errnum ));
+        }
+       /* fp_temp1= fopen(names[1], "rb");
+        printf("Trying to open %s\n",names[1]);
+        if (fp_temp1 == NULL) {
+
+            errnum = errno;
+            fprintf(stderr, "Value of errno: %d\n", errno);
+            perror("Error printed by perror");
+            fprintf(stderr, "Error opening file: %s\n", strerror( errnum ));
+        }*/
+
+     char name_buffer[64];
+     strcpy(temp,names[1]);
+     temp1=strrchr(temp,'.');
+     temp1=++temp1;
+     memset(name_buffer,0,64);
+     strcpy(name_buffer,names[0]);
+     strcat(name_buffer,temp1);
+    fp_final= fopen(name_buffer, "wb");
+     if (fp_final == NULL) {
 
 
-    while(!feof(fp1)){
-        size_t nread =fread(buffer,1,BUFFER_SIZE,fp1);
-        fwrite(buffer,1,nread,fp3);
-    }
-    while(!feof(fp2)){
-        size_t nread =fread(buffer,1,BUFFER_SIZE,fp2);
-        fwrite(buffer,1,nread,fp3);
-    }
+         errnum = errno;
+         printf("Trying to open %s\n",name_buffer);
+         fprintf(stderr, "Value of errno: %d\n", errno);
+         perror("Error printed by perror");
+         fprintf(stderr, "Error opening file: %s\n", strerror( errnum ));
+     }
 
-    /* while ((c = fgetc(fp1)) != EOF){
+     while(!feof(fp_temp)){
+         size_t nread =fread(buffer,1,BUFFER_SIZE,fp_temp);
+         fwrite(buffer,1,nread,fp_final);
+     }
+     while(!feof(fp_temp1)){
+         size_t nread =fread(buffer,1,BUFFER_SIZE,fp_temp1);
+         fwrite(buffer,1,nread,fp_final);
+     }
 
-         fputc(c, fp3);
+     fclose(fp_temp);
+     fclose(fp_temp1);
+     fclose(fp_final);
+     free(temp);
+
+     memset(names[0],0,64);
+    // names[0]="final";
+     strcpy(names[0],name_buffer);
+   /*  if(broj_thread==brojac){
+
+         names[1]=={""};
      }*/
+         names[1]=names[brojac];
+         brojac++;
 
 
-    // Copy contents of second file to file3.txt
-    /*   while ((c = fgetc(fp2)) != EOF)
-           fputc(c, fp3);*/
 
-    // printf("Merged file1.txt and file2.txt into file3.txt");
 
-    fclose(fp1);
-    fclose(fp2);
-    fclose(fp3);
-    for(int j=0;j<broj_thread;j++){
-        free(names[j]);
+
     }
+    for(int i=0;i<=broj_thread;i++){
+
+        free(names[i]);
+
+    }
+    printf("spojili smo \n");
+
 
 }
 void *recv_files(void *socket_tmp){
@@ -432,9 +476,9 @@ void *create_file(void * socket_tmp){
             }*/
             ssize_t j= strlen(buffer);
             printf("string len of buffer %d  Buffer[%s]\n",(int) j,buffer);
-            if(j==0){
+    /*        if(j==0){
                 exit(1);
-            }
+            }*/
             fwrite(buffer,1,strlen(buffer),fp);
            // fwrite(buffer,1,BUFFER_SIZE,fp);
         }

@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dushn/Desktop/ORM1C/file_handeling.c
+/home/dusan/Desktop/Untitled Folder/ORM1/ORM1C/file_handeling.c
 stdio.h
 -
 sys/socket.h
@@ -22,11 +22,11 @@ dirent.h
 errno.h
 -
 file_handeling.h
-/home/dushn/Desktop/ORM1C/file_handeling.h
+/home/dusan/Desktop/Untitled Folder/ORM1/ORM1C/file_handeling.h
 
-/home/dushn/Desktop/ORM1C/file_handeling.h
+/home/dusan/Desktop/Untitled Folder/ORM1/ORM1C/file_handeling.h
 
-/home/dushn/Desktop/ORM1C/main.c
+/home/dusan/Desktop/Untitled Folder/ORM1/ORM1C/main.c
 stdio.h
 -
 stdlib.h
@@ -38,7 +38,7 @@ netdb.h
 zconf.h
 -
 pthread.h
-/home/dushn/Desktop/ORM1C/pthread.h
+/home/dusan/Desktop/Untitled Folder/ORM1/ORM1C/pthread.h
 file_handeling.h
-/home/dushn/Desktop/ORM1C/file_handeling.h
+/home/dusan/Desktop/Untitled Folder/ORM1/ORM1C/file_handeling.h
 

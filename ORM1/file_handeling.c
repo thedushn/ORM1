@@ -24,7 +24,7 @@ void * new_file(void *data_temp){
 
 
 
-        fp=fopen(data_s1.filename,"r");
+        fp=fopen(data_s1.filename,"rb");
         if (fp == NULL) {
             printf("open failed, errno = %d\n", errno);
             exit(1);
@@ -32,7 +32,8 @@ void * new_file(void *data_temp){
         fseek(fp, data_s1.file_position_b,SEEK_CUR );
 
     if(data_s1.file_position_b!=0){
-       koliko_treba=data_s1.file_position_e-data_s1.file_position_b+1;
+       koliko_treba=data_s1.file_position_e-data_s1.file_position_b;
+       //koliko_treba=data_s1.file_position_e-data_s1.file_position_b+1;
     }
     else{
 
@@ -178,14 +179,15 @@ void * new_file(void *data_temp){
 
 
         size_t nread =fread(buffer,1,BUFFER_SIZE,fp);
-        if(nread>koliko_treba || nread==koliko_treba){
+
+       if(nread>koliko_treba || nread==koliko_treba){
 
 
             strncpy(buffer2,buffer,(size_t)koliko_treba);
             koliko_treba-=koliko_treba;
 
         }
-        else{
+       else{
 
 
             koliko_treba-=nread;
@@ -723,95 +725,7 @@ int splitFile(char *fileIn, size_t maxSize)
     return (result);
 }
 
-void reassemble(int broj_sfiles,char *filename ){
 
-    DIR *dir;
-    struct dirent *d_file;
-    char cwd[1024];
-    //char (*file_name_array)[64];
-    getcwd(cwd, sizeof(cwd));
-    int i=0;
-
-
-    if((dir  = opendir(cwd)) == NULL) {
-        perror("\nUnable to open directory.");
-        exit(0);
-    }
-    while ((d_file=readdir(dir)) != NULL) {
-       // printf("%s\n", d_file->d_name);
-        char *temp=malloc(256);
-        char *temp1;
-       if( strncmp(filename,d_file->d_name,strlen(filename))==0){
-            i++;
-           strcpy(temp,d_file->d_name);
-           temp1=strrchr(temp,'.');
-         //  printf("TEMP %s\n",temp1);
-           temp1=++temp1;
-           printf("TEMP %s\n",temp1);
-           int n=atoi(temp1);
-           printf("N %d \n",n);
-
-
-       }
-
-
-
-
-
-        free(temp);
-       // free(temp1);
-    }
-    printf("I %d\n",i);
-    closedir(dir);
-
-}
-void merge (){
-
-
-
-    // Open two files to be merged
-    FILE *fp1 = fopen("rc.jpg.temp2", "rb");
-    FILE *fp2 = fopen("rc.jpg.5", "rb");
-    char buffer[BUFFER_SIZE];
-    // Open file to store the result
-    FILE *fp3 = fopen("rc.jpg.temp3", "wb");
-    char c;
-
-    if (fp1 == NULL || fp2 == NULL || fp3 == NULL)
-    {
-        puts("Could not open files");
-        exit(0);
-    }
-
-  //  fseek(fp3,0,SEEK_END);
-    // Copy contents of first file to file3.txt
-
-
-    while(!feof(fp1)){
-        size_t nread =fread(buffer,1,BUFFER_SIZE,fp1);
-        fwrite(buffer,1,nread,fp3);
-    }
-    while(!feof(fp2)){
-        size_t nread =fread(buffer,1,BUFFER_SIZE,fp2);
-        fwrite(buffer,1,nread,fp3);
-    }
-
-   /* while ((c = fgetc(fp1)) != EOF){
-
-        fputc(c, fp3);
-    }*/
-
-
-    // Copy contents of second file to file3.txt
- /*   while ((c = fgetc(fp2)) != EOF)
-        fputc(c, fp3);*/
-
-   // printf("Merged file1.txt and file2.txt into file3.txt");
-
-    fclose(fp1);
-    fclose(fp2);
-    fclose(fp3);
-}
 
 
 

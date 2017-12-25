@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/dushn/Desktop/ORM1/cmake-build-debug"/>
+				<Option working_dir="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/dushn/Desktop/ORM1/cmake-build-debug"/>
+				<Option working_dir="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/dushn/Desktop/ORM1/cmake-build-debug"/>
+				<Option working_dir="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ORM1">
-				<Option output="/home/dushn/Desktop/ORM1/cmake-build-debug/ORM1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dushn/Desktop/ORM1/cmake-build-debug"/>
+				<Option output="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug/ORM1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ORM1"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ORM1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ORM1/fast">
-				<Option output="/home/dushn/Desktop/ORM1/cmake-build-debug/ORM1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dushn/Desktop/ORM1/cmake-build-debug"/>
+				<Option output="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug/ORM1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,23 +77,23 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ORM1/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dushn/Desktop/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ORM1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dusan/Desktop/Untitled\ Folder/ORM1/ORM1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/dushn/Desktop/ORM1/file_handeling.c">
+		<Unit filename="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/file_handeling.c">
 			<Option target="ORM1"/>
 		</Unit>
-		<Unit filename="/home/dushn/Desktop/ORM1/file_handeling.h">
+		<Unit filename="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/file_handeling.h">
 			<Option target="ORM1"/>
 		</Unit>
-		<Unit filename="/home/dushn/Desktop/ORM1/main.c">
+		<Unit filename="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/main.c">
 			<Option target="ORM1"/>
 		</Unit>
-		<Unit filename="/home/dushn/Desktop/ORM1/CMakeLists.txt">
+		<Unit filename="/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

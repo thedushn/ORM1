@@ -19,4 +19,4 @@
 ==10216== 
 ==10216== Conditional jump or move depends on uninitialised value(s)
 ==10216==    at 0x163222F8: ??? (in /usr/lib/x86_64-linux-gnu/librsvg-2.so.2.40.13)
-==10216==    by 0x16322EEB: rsvg_handle_get_pixbuf_sub (in /usr/lib/x86_64-linux-gnu
+==10216==    by 0x16322EEB: rsvg_handle_get_pixbuf_sub (in /usr/lib/x86_64-linux-gnu24a

@@ -11,7 +11,86 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbf7ceaf-7d0a-4d41-9bf2-e9f7a8c1ec60" name="Default" comment="" />
+    <list default="true" id="cbf7ceaf-7d0a-4d41-9bf2-e9f7a8c1ec60" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CMakeCCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CMakeCXXCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CMakeSystem.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/a.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/a.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeCXXCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CMakeSystem.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/a.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/a.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/log.txt.0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/log.txt.004" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/log.txt.005" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/log.txt.4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/log1.txt.0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/log1.txt.1" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/file_handeling.c.o" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/file_handeling.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/main.c.o" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/main.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/feature_tests.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/ORM1" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/ORM1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/main.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/main.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ORM1C" afterPath="$PROJECT_DIR$/cmake-build-debug/ORM1C" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ORM1/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/C.includecache" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/build.make" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/depend.internal" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/depend.make" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/flags.make" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/link.txt" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/ORM1.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/clion-environment.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/clion-log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/feature_tests.c" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/CMakeFiles/feature_tests.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/ORM1.cbp" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/ORM1.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/cmake-build-debug/test.txt" afterPath="$PROJECT_DIR$/../ORM1/cmake-build-debug/test.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/file_handeling.c" afterPath="$PROJECT_DIR$/../ORM1/file_handeling.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/main.c" afterPath="$PROJECT_DIR$/../ORM1/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/C.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/C.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/DependInfo.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/build.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/link.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ORM1C.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/ORM1C.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handeling.c" afterPath="$PROJECT_DIR$/file_handeling.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +99,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
@@ -36,9 +114,11 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="720">
+              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +126,8 @@
       <file leaf-file-name="file_handeling.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_handeling.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="89" column="23" lean-forward="true" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+            <state relative-caret-position="401">
+              <caret line="154" column="26" lean-forward="false" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
               <folding>
                 <element signature="e#41#59#0" expanded="true" />
               </folding>
@@ -58,7 +138,7 @@
       <file leaf-file-name="file_handeling.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_handeling.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="162">
               <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
               <folding />
             </state>
@@ -85,6 +165,10 @@
       <find>Trying to open</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -92,8 +176,9 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/log.txt.004" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/file_handeling.h" />
-        <option value="$PROJECT_DIR$/file_handeling.c" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/final.txt" />
         <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/file_handeling.c" />
       </list>
     </option>
   </component>
@@ -103,12 +188,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="979" />
+    <option name="y" value="24" />
+    <option name="width" value="928" />
+    <option name="height" value="951" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -126,30 +212,18 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ORM1C" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cmake-build-debug" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="ORM1C" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ORM1C" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ORM1C" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ORM1C" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
     </panes>
@@ -172,6 +246,24 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.ORM1C">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+    </configuration>
+    <configuration name="ORM1C" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="5555   127.0.0.1 192.168.122.70         " PASS_PARENT_ENVS_2="true" PROJECT_NAME="ORM1C" TARGET_NAME="ORM1C" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ORM1C" RUN_TARGET_NAME="ORM1C">
+      <envs />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="CLion_Remote" factoryName="GDB Remote Debug" remoteCommand="" symbolFile="" sysroot="">
       <method />
     </configuration>
@@ -267,20 +359,6 @@
       <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -354,14 +432,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ORM1C" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="5555   127.0.0.1 192.168.122.70         " PASS_PARENT_ENVS_2="true" PROJECT_NAME="ORM1C" TARGET_NAME="ORM1C" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ORM1C" RUN_TARGET_NAME="ORM1C">
-      <envs />
-      <method />
-    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.ORM1C" />
@@ -402,11 +472,12 @@
       <workItem from="1513971429970" duration="1736000" />
       <workItem from="1513975796497" duration="15220000" />
       <workItem from="1514196791653" duration="15262000" />
+      <workItem from="1514225488786" duration="6278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87263000" />
+    <option name="totallyTimeSpent" value="93541000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,19 +490,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="979" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16252074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1641791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31578946" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31578946" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35438597" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35411766" sideWeight="0.5395246" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35411766" sideWeight="0.46047541" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44" sideWeight="0.49585405" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44093567" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -464,7 +534,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -474,12 +544,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>173</line>
+          <line>194</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>223</line>
+          <line>244</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
@@ -496,57 +566,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/stdlib.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3640">
-          <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding>
-            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/file_handeling.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file_handeling.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1820">
@@ -569,7 +588,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1840">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -584,42 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding>
-            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,7 +638,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1840">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -671,42 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding>
-            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,7 +688,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1460">
           <caret line="73" column="16" lean-forward="true" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
-          <folding />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -770,42 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
           <caret line="182" column="16" lean-forward="false" selection-start-line="182" selection-start-column="16" selection-end-line="182" selection-end-column="16" />
-          <folding>
-            <marker date="1497646305000" expanded="false" signature="1221:3024" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="3499:3727" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="4714:4920" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5163:5520" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="5955:6375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="6421:6880" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9436:9800" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="9901:12214" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12530:12628" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="12684:15663" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16738:16835" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="16879:16899" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17014:17162" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17192:17375" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17404:17582" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="17911:18197" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18244:18449" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="18803:19047" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19096:19330" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="19802:20065" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20095:20420" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20447:20664" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="20764:21131" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21199:21957" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="21984:22651" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="22682:23049" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="24991:25395" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="26718:26826" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27244:27423" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="27523:28547" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="28574:29844" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="30750:31083" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="31152:31700" ph="..." />
-            <marker date="1497646305000" expanded="false" signature="33014:33317" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,26 +733,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.004">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="101" lean-forward="false" selection-start-line="5" selection-start-column="101" selection-end-line="5" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/rc.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/rc.jpg" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -845,169 +750,87 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.223-446" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.0-223">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.0-223" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/full.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.0" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.1" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.2" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.4" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.2" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.0">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.01234">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="82" column="79" lean-forward="true" selection-start-line="82" selection-start-column="79" selection-end-line="82" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.3">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.01234">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.01">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.01234" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.3" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.4" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.01234" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.01" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/file_handeling.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="162">
           <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.012">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.1230txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-635">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.1230">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.0123">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.012" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.1230txt" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.1230" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.0123" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.0">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="43" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.01" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.0110" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.012">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.01">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/final.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="51" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="82" />
+        <state relative-caret-position="144">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="184363" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.0110">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2949">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="7" column="83" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="184363" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/file_handeling.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="89" column="23" lean-forward="true" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+        <state relative-caret-position="401">
+          <caret line="154" column="26" lean-forward="false" selection-start-line="154" selection-start-column="26" selection-end-line="154" selection-end-column="26" />
           <folding>
             <element signature="e#41#59#0" expanded="true" />
           </folding>
@@ -1016,9 +839,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="720">
+          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

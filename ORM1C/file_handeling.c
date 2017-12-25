@@ -45,7 +45,7 @@ void merge (const int broj_thread,char *filename){
         // printf("%s\n", d_file->d_name);
         char *temp=malloc(256);
         char *temp1;
-        if( strncmp(filename,d_file->d_name,8/*strlen(filename)*/)==0){
+        if( strncmp(filename,d_file->d_name,strlen(filename))==0){
 
             strcpy(temp,d_file->d_name);
             names[t]=(char *) malloc(64);
@@ -144,6 +144,21 @@ void merge (const int broj_thread,char *filename){
      fclose(fp_temp);
      fclose(fp_temp1);
      fclose(fp_final);
+
+    int ret = remove(names[1]);
+
+     if(ret == 0) {
+         printf("File deleted successfully\n");
+     } else {
+         printf("Error: unable to delete the file\n");
+     }
+      ret = remove(names[0]);
+
+     if(ret == 0) {
+         printf("File deleted successfully\n");
+     } else {
+         printf("Error: unable to delete the file\n");
+     }
      free(temp);
 
      memset(names[0],0,64);
@@ -161,12 +176,18 @@ void merge (const int broj_thread,char *filename){
 
 
     }
+/*    char *final;
+    char *temp3;
+    strcpy(temp3,names[0]);*/
+
+    rename(names[0],filename);
     for(int i=0;i<=broj_thread;i++){
 
         free(names[i]);
 
     }
     printf("spojili smo \n");
+
 
 
 }

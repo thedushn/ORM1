@@ -38,7 +38,7 @@ void conection(int * socket_new,char *port){
 }
 int main(int argc, char *argv[]) {
 
-    int num_pthreads=2;
+    int num_pthreads=3;
     pthread_attr_t attr;
     pthread_t t[num_pthreads], t2;
     char buffer[BUFFER_SIZE];
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 
 
-    if (argc < 2) {
+   if (argc < 2) {
 
         printf("no port provided");
         exit(1);
@@ -129,12 +129,12 @@ int main(int argc, char *argv[]) {
 
 
     FILE *fp;
-    char *filename="log1.txt";
+    char *filename="log.txt";
     fp=fopen(filename,"r");
     long	file_size;
     fseek(fp, 0, SEEK_END);
     file_size = ftell(fp);
-   // file_size=15555;
+    //file_size=15555;
     fseek(fp, 0, 0);
     sprintf(buffer,"%li",file_size);
     fclose(fp);
@@ -152,17 +152,26 @@ int main(int argc, char *argv[]) {
         numb_packets=1;
     }
 
-    int numb_bytes=((int)file_size/num_pthreads);
+    int numb_bytes=(int)((file_size/num_pthreads));
 
+      //  numb_bytes=ceilf(numb_bytes);
 
     struct data_s data_s1[num_pthreads];
 
     for(int i=0;i<num_pthreads;i++){
-       memset(&data_s1[i],0,sizeof(struct data_s));
+        memset(&data_s1[i],0,sizeof(struct data_s));
+        data_s1[i].file_position_b=(int)numb_bytes*i;
+        data_s1[i].file_position_e=(int)numb_bytes*(i+1);
+    }
+    if(data_s1[num_pthreads-1].file_position_e!=file_size){
+        data_s1[num_pthreads-1].file_position_e=(int)file_size;
+    }
+    for(int i=0;i<num_pthreads;i++){
+       //memset(&data_s1[i],0,sizeof(struct data_s));
         strcpy(data_s1[i].filename,filename);
         data_s1[i].file_size=(int)file_size;
-        data_s1[i].file_position_b=numb_bytes*i;
-        data_s1[i].file_position_e=numb_bytes*(i+1);
+       // data_s1[i].file_position_b=(int)numb_bytes*i;
+       // data_s1[i].file_position_e=(int)numb_bytes*(i+1);
         data_s1[i].numb_packets=(int)numb_packets*(i+1);
         data_s1[i].pack_number=i;
       //  new_file(&data_s1[i]);

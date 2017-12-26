@@ -65,7 +65,7 @@ int  conection(char * argv1,char *argv2){
 int main(int argc, char *argv[]) {
 
 
-    int num_threads=3;
+    int num_threads=1;
     pthread_t  t[num_threads];
 
 
@@ -87,6 +87,7 @@ int main(int argc, char *argv[]) {
         exit(1);
 
     }
+
 
     int socket_num[num_threads];
     for(int i=0;i<num_threads;i++) {
@@ -130,7 +131,7 @@ int main(int argc, char *argv[]) {
 
 
     printf("ulazimo u merge\n");
-    merge(3,"log.txt");
+   // merge(3,"rc.jpg");
 
     printf("sve proslo kako treba\n");
 

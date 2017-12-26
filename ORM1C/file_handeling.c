@@ -322,6 +322,7 @@ void *create_file(void * socket_tmp){
     ssize_t ret=0;
     int socket=0;
     int file_size=0;
+    ssize_t  koliko_treba_upisati;
     char *filename_b=(char *)malloc(64);
     char *filename_e=(char *)malloc(64);
    static int koliko_bytes=0;
@@ -386,9 +387,14 @@ void *create_file(void * socket_tmp){
 
     sscanf(buffer,"%s %d %s %s %s",filename,&file_size,filename_b,filename_e,filename_f);
     printf("File size %d\n",file_size);
+    koliko_treba_upisati=filename_e-filename_b;
     //ret = recv(socket,buffer,BUFFER_SIZE, 0);
    // printf("Return value : [%d]",(int)ret);
-    if(ret<0){
+
+
+
+
+  /*  if(ret<0){
 
         printf("error receing data\n %d",(int)ret);
         exit(1);
@@ -412,7 +418,7 @@ void *create_file(void * socket_tmp){
             }
             printf("Return value %d\n",(int)ret);
         }
-    }
+    }*/
 
     if(file_size>0){
         memset(buffer_3,0,BUFFER_SIZE);
@@ -422,7 +428,7 @@ void *create_file(void * socket_tmp){
        // strcat(buffer_3,filename_b);
      //   strcat(buffer_3,"-");
       //  strcat(buffer_3,filename_e);
-        fp =fopen(buffer_3,"w+");
+        fp =fopen(buffer_3,"wb");
         if (fp == NULL) {
             perror("open");
             exit(EXIT_FAILURE);
@@ -500,8 +506,16 @@ void *create_file(void * socket_tmp){
     /*        if(j==0){
                 exit(1);
             }*/
-            fwrite(buffer,1,strlen(buffer),fp);
-           // fwrite(buffer,1,BUFFER_SIZE,fp);
+        //    fwrite(buffer,1,strlen(buffer),fp);
+            size_t write1;
+            koliko_treba_upisati-=write1;
+            if(koliko_treba_upisati==0){
+
+            }
+            else{
+                write1= fwrite(buffer,1,BUFFER_SIZE,fp);
+            }
+
         }
 
     }

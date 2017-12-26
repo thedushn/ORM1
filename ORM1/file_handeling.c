@@ -20,6 +20,7 @@ void * new_file(void *data_temp){
         int socket=data_s1.socket;
         static int koliko_bytes;
     int koliko_treba;
+    int koliko_treba_1;
         strcpy(filename,data_s1.filename);
 
 
@@ -33,11 +34,13 @@ void * new_file(void *data_temp){
 
     if(data_s1.file_position_b!=0){
        koliko_treba=data_s1.file_position_e-data_s1.file_position_b;
+        koliko_treba_1=data_s1.file_position_e-data_s1.file_position_b;
        //koliko_treba=data_s1.file_position_e-data_s1.file_position_b+1;
     }
     else{
 
         koliko_treba=data_s1.file_position_e;
+       koliko_treba_1= data_s1.file_position_e;
     }
 
 
@@ -202,21 +205,33 @@ void * new_file(void *data_temp){
 
 
             ret_1=send(socket,buffer2,BUFFER_SIZE,0);
-            koliko_bytes+=ret_1;
+
             printf("Return value %d\n",(int)ret_1);
             if(ret_1<0){
                 printf("Error sending num_packets!\n\t");
                 exit(1);
             }
+            if(ret_1==0){
+            printf("Error sending num_packets!\n\t");
+                printf("socket closed\n");
+            exit(1);
+            }
+            koliko_bytes+=ret_1;
+//            if(ret_1<strlen(buffer2)){
+            if(ret_1<BUFFER_SIZE){
+                size_t velicina=BUFFER_SIZE;
+                velicina-=ret_1;
+                while (velicina > 0 || velicina < 0) {
+                    printf("Buffer2 [%s]\n", buffer2);
 
-            if(ret_1<strlen(buffer2)){
+                    ret_1 = send(socket, buffer2, velicina, 0);
+                    velicina -= ret_1;
+                    koliko_bytes += ret_1;
+                    if (ret_1 < 0) {
 
-                size_t velicina=nread;
-                while(velicina>0){
-                    velicina-=ret_1;
-                    ret_1=send(socket,buffer,velicina,0);
-                    koliko_bytes+=ret_1;
-
+                        printf("error receing data\n %d", (int) ret_1);
+                        exit(1);
+                    }
                 }
             }
 
@@ -260,8 +275,8 @@ void * new_file(void *data_temp){
 
     }
 
-
-
+    printf("koliko bytes poslato %d\n",koliko_bytes);
+    printf("koliko treba %d\n",koliko_treba_1);
     printf("izasli smo iz thread\n");
         return 0;
 }

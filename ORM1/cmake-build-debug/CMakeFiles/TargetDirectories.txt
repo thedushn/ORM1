@@ -1,3 +1,3 @@
-/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/dusan/Desktop/Untitled Folder/ORM1/ORM1/cmake-build-debug/CMakeFiles/ORM1.dir
+/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/cmake-build-debug/CMakeFiles/ORM1.dir

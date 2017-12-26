@@ -38,7 +38,7 @@ void conection(int * socket_new,char *port){
 }
 int main(int argc, char *argv[]) {
 
-    int num_pthreads=3;
+    int num_pthreads=1;
     pthread_attr_t attr;
     pthread_t t[num_pthreads], t2;
     char buffer[BUFFER_SIZE];
@@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {
 
 
     FILE *fp;
-    char *filename="log.txt";
+    char *filename="rc.jpg";
     fp=fopen(filename,"r");
     long	file_size;
     fseek(fp, 0, SEEK_END);

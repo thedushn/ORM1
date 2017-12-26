@@ -16,77 +16,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="112a4fdd-1ee2-47dd-81ae-92b30236e002" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeCCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeCXXCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CMakeSystem.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CMakeCCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CMakeCXXCompiler.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CMakeSystem.cmake" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/a.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/log.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/rc.jpg.0" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/file_handeling.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/file_handeling.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/main.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/main.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ORM1" afterPath="$PROJECT_DIR$/cmake-build-debug/ORM1" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/main.c.o" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/main.c.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/ORM1C" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/ORM1C" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/rc.jpg.0" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/rc.jpg.0" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/C.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ORM1.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/ORM1.cbp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/fluffy.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/fluffy.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handeling.c" afterPath="$PROJECT_DIR$/file_handeling.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ORM1C/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/C.includecache" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/C.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/build.make" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.internal" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.make" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/flags.make" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/link.txt" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/link.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/clion-environment.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/feature_tests.c" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/CMakeFiles/feature_tests.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/ORM1C.cbp" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/ORM1C.cbp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/../ORM1C/cmake-build-debug/cmake_install.cmake" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/file_handeling.c" afterPath="$PROJECT_DIR$/../ORM1C/file_handeling.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1C/main.c" afterPath="$PROJECT_DIR$/../ORM1C/main.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -519,12 +454,12 @@
       <workItem from="1513975782909" duration="14274000" />
       <workItem from="1514196836890" duration="10612000" />
       <workItem from="1514225470632" duration="8595000" />
-      <workItem from="1514282591871" duration="7459000" />
+      <workItem from="1514282591871" duration="8105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121251000" />
+    <option name="totallyTimeSpent" value="121897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="979" extended-state="6" />

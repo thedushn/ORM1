@@ -321,10 +321,13 @@ void *create_file(void * socket_tmp){
     char buffer_3[BUFFER_SIZE];
     ssize_t ret=0;
     int socket=0;
+    size_t write1;
     int file_size=0;
     ssize_t  koliko_treba_upisati;
-    char *filename_b=(char *)malloc(64);
-    char *filename_e=(char *)malloc(64);
+   /* char *filename_b=(char *)malloc(64);
+    char *filename_e=(char *)malloc(64);*/
+    int filename_b=0;
+    int filename_e=0;
    static int koliko_bytes=0;
     char *filename=(char *)malloc(64);
     char *filename_f=(char *)malloc(64);
@@ -385,9 +388,9 @@ void *create_file(void * socket_tmp){
 
 
 
-    sscanf(buffer,"%s %d %s %s %s",filename,&file_size,filename_b,filename_e,filename_f);
+    sscanf(buffer,"%s %d %d %d %s",filename,&file_size,&filename_b,&filename_e,filename_f);
     printf("File size %d\n",file_size);
-    koliko_treba_upisati=filename_e-filename_b;
+    koliko_treba_upisati=(filename_e-filename_b);
     //ret = recv(socket,buffer,BUFFER_SIZE, 0);
    // printf("Return value : [%d]",(int)ret);
 
@@ -507,10 +510,11 @@ void *create_file(void * socket_tmp){
                 exit(1);
             }*/
         //    fwrite(buffer,1,strlen(buffer),fp);
-            size_t write1;
-            koliko_treba_upisati-=write1;
-            if(koliko_treba_upisati==0){
 
+            koliko_treba_upisati-=write1;
+            printf("koliko treba %d \n",koliko_treba_upisati);
+            if(koliko_treba_upisati==0){
+                fclose(fp);
             }
             else{
                 write1= fwrite(buffer,1,BUFFER_SIZE,fp);

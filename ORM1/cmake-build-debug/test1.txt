@@ -1,0 +1,22 @@
+==10216== Memcheck, a memory error detector
+==10216== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10216== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==10216== Command: ./gtkworld
+==10216== 
+==10216== Conditional jump or move depends on uninitialised value(s)
+==10216==    at 0x8D19D86: ??? (in /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6)
+==10216==    by 0x8CFCE82: ??? (in /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6)
+==10216==    by 0x8CB8F80: pixman_image_composite32 (in /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.33.6)
+==10216==    by 0x579B504: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x57E0920: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x57D2C32: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x57D36A4: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x57D41E9: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x578E99E: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x57A00F1: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x57D76D5: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216==    by 0x5796D2E: ??? (in /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.6)
+==10216== 
+==10216== Conditional jump or move depends on uninitialised value(s)
+==10216==    at 0x163222F8: ??? (in /usr/lib/x86_64-linux-gnu/librsvg-2.so.2.40.13)
+==10216==    by 0x16322EEB: rsvg_handle_get_pixbuf_sub (in /usr/lib/x86_64-linux-gnu24a

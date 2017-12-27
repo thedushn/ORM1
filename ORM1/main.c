@@ -55,6 +55,7 @@ int main(int argc, char *argv[]) {
     // uint16_t portnum=(uint16_t)atoi(argv[1]);
 
 
+
     int sockfd=0;
     int new_fd;  // listen on sock_fd, new connection on new_fd
     struct addrinfo hints, *servinfo, *p;
@@ -129,7 +130,7 @@ int main(int argc, char *argv[]) {
 
 
     FILE *fp;
-    char *filename="rc.jpg";
+    char *filename="log.txt";
     fp=fopen(filename,"r");
     long	file_size;
     fseek(fp, 0, SEEK_END);
@@ -210,6 +211,7 @@ int main(int argc, char *argv[]) {
 
 
 
+
 /*     struct data_s *data_s1=calloc(num_pthreads,sizeof(struct data_s));
 
 
@@ -277,9 +279,10 @@ int main(int argc, char *argv[]) {
 
     printf("sve proslo kako treba\n");
     pthread_mutex_destroy(&m);
-    printf("file_size %li \n",file_size);
+  //  printf("file_size %li \n",file_size);
 
   //  free(data_s1);
     close(sockfd);
+
 return 0;
 }

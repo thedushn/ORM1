@@ -9,6 +9,12 @@
 /home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/file_handeling.c
 errno.h
 -
+fcntl.h
+-
+sys/stat.h
+-
+inttypes.h
+-
 file_handeling.h
 /home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/file_handeling.h
 

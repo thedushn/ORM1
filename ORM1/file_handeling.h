@@ -17,6 +17,7 @@ void *recv_files(void * socket);
 void *send_files(void *socket);
 void merge();
 void *new_file(void *socket_info);
+void test();
 
 struct data_s{
 

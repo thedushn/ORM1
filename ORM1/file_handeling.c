@@ -4,15 +4,22 @@
 
 
 #include <errno.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <inttypes.h>
 #include "file_handeling.h"
 #define BUFFER_SIZE 1400
+#define BUFFER_SIZE2 1404
 
 
 void * new_file(void *data_temp){
 
         char buffer[BUFFER_SIZE];
         char buffer2[BUFFER_SIZE];
+        char buffer3[BUFFER_SIZE2];
         FILE *fp;
+        int fp1;
+        int fp2;
         ssize_t ret_1;
         char *filename=malloc(64);
         struct data_s data_s1;
@@ -21,11 +28,21 @@ void * new_file(void *data_temp){
         static int koliko_bytes;
     int koliko_treba;
     int koliko_treba_1;
+    size_t read_temp;
         strcpy(filename,data_s1.filename);
 
 
 
         fp=fopen(data_s1.filename,"rb");
+      //  fp=fopen(data_s1.filename,"rb");
+    fp1= open(data_s1.filename,O_RDONLY,S_IREAD);
+   // fp2=creat("test.jpg",);
+   // fp2=open("test1.txt",O_WRONLY| O_CREAT,S_IWRITE);
+    if(fp1<=0){
+        printf("open failed, errno = %d\n", errno);
+        exit(1);
+
+    }
         if (fp == NULL) {
             printf("open failed, errno = %d\n", errno);
             exit(1);
@@ -180,9 +197,17 @@ void * new_file(void *data_temp){
 
         }
 
+        size_t nread;
+        /*     size_t nread =fread(buffer,1,BUFFER_SIZE,fp);
+             printf("Buffer %s \n",buffer);
+              ssize_t read1=  read(fp1,buffer4,BUFFER_SIZE);
+             printf("Buffer4 %s \n",buffer4);
+              ssize_t  write1=  write(fp2,buffer4,(size_t)read1);*/
 
-        size_t nread =fread(buffer,1,BUFFER_SIZE,fp);
 
+        nread=(size_t)read(fp1,buffer,BUFFER_SIZE);
+
+        read_temp+=nread;
        if(nread>koliko_treba || nread==koliko_treba){
 
 
@@ -201,10 +226,44 @@ void * new_file(void *data_temp){
          printf("Strlen Buf %d strlen buff2 %d\n",(int)strlen(buffer),(int)strlen(buffer2));
         printf("Buffer2 [%s]\n",buffer2);
 
+            __uint64_t packet_size= (int)strlen(buffer2);
 
+                sprintf(buffer3,"%" SCNu64 "",packet_size);
+        printf("Strlen Buf3 %d \n",(int)strlen(buffer3));
+        strcat(buffer3,buffer2);
 
+        ret_1=send(socket,buffer3,BUFFER_SIZE2,0);
 
-            ret_1=send(socket,buffer2,BUFFER_SIZE,0);
+        printf("Return value %d\n",(int)ret_1);
+        if(ret_1<0){
+            printf("Error sending num_packets!\n\t");
+            exit(1);
+        }
+        if(ret_1==0){
+            printf("Error sending num_packets!\n\t");
+            printf("socket closed\n");
+            exit(1);
+        }
+        koliko_bytes+=ret_1;
+//            if(ret_1<strlen(buffer2)){
+        if(ret_1<BUFFER_SIZE2){
+            size_t velicina=BUFFER_SIZE2;
+            velicina-=ret_1;
+            while (velicina > 0 || velicina < 0) {
+                printf("Buffer2 [%s]\n", buffer2);
+
+                ret_1 = send(socket, buffer3, velicina, 0);
+                velicina -= ret_1;
+                koliko_bytes += ret_1;
+                if (ret_1 < 0) {
+
+                    printf("error receing data\n %d", (int) ret_1);
+                    exit(1);
+                }
+            }
+        }
+
+     /*       ret_1=send(socket,buffer2,BUFFER_SIZE,0);
 
             printf("Return value %d\n",(int)ret_1);
             if(ret_1<0){
@@ -233,7 +292,7 @@ void * new_file(void *data_temp){
                         exit(1);
                     }
                 }
-            }
+            }*/
 
 
 
@@ -278,6 +337,9 @@ void * new_file(void *data_temp){
     printf("koliko bytes poslato %d\n",koliko_bytes);
     printf("koliko treba %d\n",koliko_treba_1);
     printf("izasli smo iz thread\n");
+    printf("koliko podataka smo iscitali %d\n",(int)read_temp);
+    close(fp1);
+    close(fp2);
         return 0;
 }
 void *recv_files(void *socket_tmp){
@@ -407,6 +469,7 @@ void* file_handeling(void * socket_tmp){
     char buffer[BUFFER_SIZE];
     char buffer2[BUFFER_SIZE];
     FILE *fp;
+    FILE *fp1;
     char *filename=malloc(64);
     struct data_s data_s1;
     data_s1=  *((struct data_s *)socket_tmp);
@@ -416,6 +479,7 @@ void* file_handeling(void * socket_tmp){
 
 
     fp=fopen(filename,"rb");
+
     fseek(fp, 0, SEEK_END);
     file_size = ftell(fp);
     fseek(fp, 0, 0);
@@ -500,7 +564,7 @@ void* file_handeling(void * socket_tmp){
         memset(buffer,0,BUFFER_SIZE);
         memset(buffer2,0,BUFFER_SIZE);
         size_t nread =fread(buffer,1,BUFFER_SIZE,fp);
-
+        fwrite(buffer,1,strlen(buffer),fp1);
         printf("Buffer [%s]\n",buffer);
         if(nread >0){
 
@@ -648,6 +712,7 @@ void* file_handeling(void * socket_tmp){
         printf("proslo sve kako treba \n");
     }
 
+    fclose(fp1);
 return 0;
 };
 /*
@@ -739,9 +804,68 @@ int splitFile(char *fileIn, size_t maxSize)
 
     return (result);
 }
+void merge(){
+
+
+    FILE *fp ;
+    FILE * fp1;
+    char buffer [BUFFER_SIZE];
+    fp=fopen("rc.jpg","rb");
+
+    if(fp==NULL){
+
+
+        printf("file coundnt get opened\n");
+        exit(1);
+
+    }
+    fp1=fopen("new.jpg","wb");
+    if(fp1==NULL){
+
+
+        printf("file coundnt get opened\n");
+        exit(1);
+
+    }
 
 
 
+
+    fclose(fp);
+    fclose(fp1);
+
+}
+
+void test(){
+
+
+    int fp,fp1 ;
+    char buffer[BUFFER_SIZE];
+    fp= open("rc.jpg",O_RDONLY,S_IREAD);
+    // fp2=creat("test.jpg",);
+    fp1=open("rc1.jpg", O_RDWR | O_APPEND | O_CREAT | O_TRUNC,S_IWRITE | S_IREAD);
+    if(fp1<0 || fp<0){
+
+        printf("open failed, errno = %d\n", errno);
+        printf("file opening failed fp %d fp1 %d \n",fp,fp1);
+        close(fp);
+        close(fp1);
+        exit(1);
+
+    }
+    size_t  read1;
+    while ((read1=(size_t)read(fp,buffer,BUFFER_SIZE))>0){
+
+         //   printf("Buffer %s\n",buffer);
+      int write1 = (int)write(fp1,buffer,read1);
+        printf("write %d \n",write1);
+
+    }
+
+    close(fp);
+    close(fp1);
+
+}
 
 
 

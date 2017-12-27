@@ -21,6 +21,10 @@ dirent.h
 -
 errno.h
 -
+fcntl.h
+-
+sys/stat.h
+-
 file_handeling.h
 /home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1C/file_handeling.h
 

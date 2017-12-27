@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/file_handeling.c" description="//fwrite(buffer,1,strlen(buffer),fp);" line="511" />
-  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
       <config projectName="ORM1C" targetName="ORM1C" />
@@ -15,11 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf7ceaf-7d0a-4d41-9bf2-e9f7a8c1ec60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ORM1C" afterPath="$PROJECT_DIR$/cmake-build-debug/ORM1C" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ORM1/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_handeling.c" afterPath="$PROJECT_DIR$/file_handeling.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/ORM1C" afterPath="$PROJECT_DIR$/cmake-build-debug/ORM1C" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ORM1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ORM1/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +32,7 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="120">
               <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
@@ -45,8 +42,8 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1036">
-              <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+            <state relative-caret-position="340">
+              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -54,10 +51,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="log.txt.0" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.0">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="log.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="140">
               <caret line="7" column="83" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="184363" selection-end-column="913" />
               <folding />
             </state>
@@ -68,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/cmake-build-debug/fluffy.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="361" />
+              <caret line="9" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="361" />
               <folding />
             </state>
           </provider>
@@ -77,8 +84,8 @@
       <file leaf-file-name="file_handeling.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/file_handeling.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="513" column="0" lean-forward="false" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="528" column="47" lean-forward="true" selection-start-line="528" selection-start-column="47" selection-end-line="528" selection-end-column="47" />
               <folding>
                 <element signature="e#41#59#0" expanded="true" />
               </folding>
@@ -115,6 +122,7 @@
       <find>Main</find>
       <find>Trying to open</find>
       <find>koliko bytes</find>
+      <find>fc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -443,11 +451,12 @@
       <workItem from="1514196791653" duration="15262000" />
       <workItem from="1514225488786" duration="6278000" />
       <workItem from="1514282622924" duration="8375000" />
+      <workItem from="1514388246172" duration="3292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101916000" />
+    <option name="totallyTimeSpent" value="105208000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,16 +471,16 @@
     <frame x="65" y="-4" width="1855" height="979" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16583748" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16749585" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31535757" sideWeight="0.68048644" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3130129" sideWeight="0.68048644" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43962485" sideWeight="0.33720288" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35404456" sideWeight="0.40574902" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34232122" sideWeight="0.40574902" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43962485" sideWeight="0.66279715" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43962485" sideWeight="0.66279715" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -515,26 +524,26 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>194</line>
+          <line>197</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>244</line>
+          <line>247</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>511</line>
-          <option name="timeStamp" value="38" />
+          <line>397</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/file_handeling.c</url>
-          <line>392</line>
-          <option name="timeStamp" value="39" />
+          <line>528</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -707,7 +716,7 @@
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.004" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="120">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
@@ -727,7 +736,6 @@
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.2" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt.4" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.2" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.0" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.01234" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.3" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log1.txt.4" />
@@ -754,19 +762,15 @@
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/fluffy.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="361" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="361" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/rc.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/rc.jpg" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
+        <state relative-caret-position="140">
           <caret line="7" column="83" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="184363" selection-end-column="913" />
           <folding />
         </state>
@@ -774,18 +778,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1036">
-          <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+        <state relative-caret-position="340">
+          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log.txt.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/file_handeling.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="513" column="0" lean-forward="false" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="528" column="47" lean-forward="true" selection-start-line="528" selection-start-column="47" selection-end-line="528" selection-end-column="47" />
           <folding>
             <element signature="e#41#59#0" expanded="true" />
           </folding>

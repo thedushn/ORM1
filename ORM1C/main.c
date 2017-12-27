@@ -130,7 +130,7 @@ int main(int argc, char *argv[]) {
 
 
 
-    printf("ulazimo u merge\n");
+   // printf("ulazimo u merge\n");
    // merge(3,"rc.jpg");
 
     printf("sve proslo kako treba\n");

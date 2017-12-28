@@ -7,6 +7,7 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <inttypes.h>
+#include <netinet/in.h>
 #include "file_handeling.h"
 #define BUFFER_SIZE 1400
 #define BUFFER_SIZE2 1404
@@ -17,6 +18,7 @@ void * new_file(void *data_temp){
         char buffer[BUFFER_SIZE];
         char buffer2[BUFFER_SIZE];
         char buffer3[BUFFER_SIZE2];
+        char write_b[4];
         FILE *fp;
         int fp1;
         int fp2;
@@ -135,21 +137,22 @@ void * new_file(void *data_temp){
 
         if(koliko_treba<=0){
             printf("stigli do kraja file\n");
-            memset(buffer,0,BUFFER_SIZE);
-            strcpy(buffer,"end of file");
-            ret_1=send(socket,buffer,BUFFER_SIZE,0);
+            memset(buffer3,0,BUFFER_SIZE2);
+            memcpy(buffer3,"1111",4);
+            strcat(buffer3,"end of file");
+            ret_1=send(socket,buffer3,BUFFER_SIZE2,0);
             koliko_bytes+=ret_1;
             if(ret_1<0){
                 printf("Error sending num_packets!\n\t");
                 exit(1);
             }
 
-            if(ret_1<BUFFER_SIZE) {
+            if(ret_1<BUFFER_SIZE2) {
 
-                size_t velicina = BUFFER_SIZE;
+                size_t velicina = BUFFER_SIZE2;
                 while (velicina > 0) {
                     velicina -= ret_1;
-                    ret_1 = send(socket, buffer, velicina, 0);
+                    ret_1 = send(socket, buffer3, velicina, 0);
                     koliko_bytes+=ret_1;
                     if (ret_1 < 0) {
 
@@ -212,7 +215,9 @@ void * new_file(void *data_temp){
 
 
             strncpy(buffer2,buffer,(size_t)koliko_treba);
-            koliko_treba-=koliko_treba;
+
+           nread=(size_t)koliko_treba;
+           koliko_treba-=koliko_treba;
 
         }
        else{
@@ -226,11 +231,14 @@ void * new_file(void *data_temp){
          printf("Strlen Buf %d strlen buff2 %d\n",(int)strlen(buffer),(int)strlen(buffer2));
         printf("Buffer2 [%s]\n",buffer2);
 
-            __uint64_t packet_size= (int)strlen(buffer2);
 
-                sprintf(buffer3,"%" SCNu64 "",packet_size);
+        sprintf(write_b,"%" SCNu16 "",(__uint16_t)nread);
+        memset(buffer3,0,BUFFER_SIZE2);
+        memcpy(buffer3+0, write_b,sizeof(write_b));
+        memcpy(buffer3+4,buffer2,sizeof(buffer2));
+                //sprintf(buffer3,"%" SCNu16 "",packet_size);
         printf("Strlen Buf3 %d \n",(int)strlen(buffer3));
-        strcat(buffer3,buffer2);
+
 
         ret_1=send(socket,buffer3,BUFFER_SIZE2,0);
 
@@ -263,43 +271,14 @@ void * new_file(void *data_temp){
             }
         }
 
-     /*       ret_1=send(socket,buffer2,BUFFER_SIZE,0);
-
-            printf("Return value %d\n",(int)ret_1);
-            if(ret_1<0){
-                printf("Error sending num_packets!\n\t");
-                exit(1);
-            }
-            if(ret_1==0){
-            printf("Error sending num_packets!\n\t");
-                printf("socket closed\n");
-            exit(1);
-            }
-            koliko_bytes+=ret_1;
-//            if(ret_1<strlen(buffer2)){
-            if(ret_1<BUFFER_SIZE){
-                size_t velicina=BUFFER_SIZE;
-                velicina-=ret_1;
-                while (velicina > 0 || velicina < 0) {
-                    printf("Buffer2 [%s]\n", buffer2);
-
-                    ret_1 = send(socket, buffer2, velicina, 0);
-                    velicina -= ret_1;
-                    koliko_bytes += ret_1;
-                    if (ret_1 < 0) {
-
-                        printf("error receing data\n %d", (int) ret_1);
-                        exit(1);
-                    }
-                }
-            }*/
 
 
 
 
         ///primamo poruku da je klient primio poruku
-        memset(buffer2,0,BUFFER_SIZE);
-        ret_1 =recv(socket,buffer2,BUFFER_SIZE,0);
+     //   memset(buffer2,0,BUFFER_SIZE);
+        memset(buffer,0,BUFFER_SIZE);
+        ret_1 =recv(socket,buffer,BUFFER_SIZE,0);
         if (ret_1 < 0) {
 
             printf("error receing data\n %d", (int) ret_1);
@@ -309,9 +288,9 @@ void * new_file(void *data_temp){
             size_t velicina = BUFFER_SIZE;
             velicina -= ret_1;
             while (velicina > 0 || velicina < 0) {
-                printf("Buffer2 [%s]\n", buffer2);
+                printf("Buffer2 [%s]\n", buffer);
 
-                ret_1 = recv(socket, buffer2, velicina, 0);
+                ret_1 = recv(socket, buffer, velicina, 0);
                 velicina -= ret_1;
                 koliko_bytes += ret_1;
                 if (ret_1 < 0) {
@@ -323,7 +302,7 @@ void * new_file(void *data_temp){
 
         }
         /// ako nije dobro primljeno
-        if (strcmp(buffer2, "stiglo sve") != 0) {
+        if (strcmp(buffer2, buffer) != 0) {
 
             printf("NOPE  \n");
             fclose(fp);
@@ -342,379 +321,8 @@ void * new_file(void *data_temp){
     close(fp2);
         return 0;
 }
-void *recv_files(void *socket_tmp){
-    int socket= *(int *) socket_tmp;
-    char buffer[BUFFER_SIZE];
-    memset(buffer,0,BUFFER_SIZE);
-    printf("Usli smo u Recv_files\n");
-    ssize_t ret_1=recv(socket,buffer,BUFFER_SIZE,0);
-    if (ret_1 < 0) {
 
-        printf("error receing data\n %d", (int) ret_1);
-        exit(1);
-    }
-    if(ret_1<BUFFER_SIZE) {
-        size_t velicina = BUFFER_SIZE;
-        velicina -= ret_1;
-        while (velicina > 0 || velicina < 0) {
-            printf("Buffer [%s]\n", buffer);
 
-            ret_1 = recv(socket, buffer, velicina, 0);
-            velicina -= ret_1;
-            ///   koliko_bytes += ret_1;
-            if (ret_1 < 0) {
-
-                printf("error receing data\n %d", (int) ret_1);
-                exit(1);
-            }
-        }
-    }
-    char buffer2[BUFFER_SIZE];
-    memset(buffer2,0,BUFFER_SIZE);
-    strcpy(buffer2,"stiglo sve");
-    ssize_t ret=send(socket,buffer2,BUFFER_SIZE,0);
-
-    if(ret<BUFFER_SIZE) {
-        size_t velicina = BUFFER_SIZE;
-        velicina -= ret;
-        while (velicina > 0 || velicina < 0) {
-            printf("Buffer2 [%s]\n", buffer2);
-
-            ret = send(socket, buffer2, velicina, 0);
-            velicina -= ret;
-            //koliko_bytes += ret;
-            if (ret < 0) {
-
-                printf("error receing data\n %d", (int) ret);
-                exit(1);
-            }
-        }
-    }
-
-    printf("Buffer %s\n",buffer);
-    printf("Socket number %d\n",socket);
-  //  close(socket);
-    // printf("closed socket\n");
-    return 0;
-
-
-}
-void * send_files(void *socket_tmp){
-
-    printf("usli smo u send_files\n");
-    int socket= *(int *) socket_tmp;
-    char buffer[BUFFER_SIZE];
-
-    strcpy(buffer,"hello client");
-    ssize_t ret= send(socket,buffer,BUFFER_SIZE,0);
-    if(ret<BUFFER_SIZE) {
-        size_t velicina = BUFFER_SIZE;
-        velicina -= ret;
-        while (velicina > 0 || velicina < 0) {
-            //  printf("Buffer2 [%s]\n", buffer_2);
-
-            ret = send(socket, buffer, velicina, 0);
-            velicina -= ret;
-            //  koliko_bytes += ret;
-            if (ret < 0) {
-
-                printf("error sending data\n %d", (int) ret);
-                exit(1);
-            }
-        }
-    }
-    char buffer2[BUFFER_SIZE];
-    memset(buffer2,0,BUFFER_SIZE);
-    ssize_t  ret_1 =recv(socket,buffer2,BUFFER_SIZE,0);
-    if (ret_1 < 0) {
-
-        printf("error receving data\n %d", (int) ret_1);
-        exit(1);
-    }
-    if(ret_1<BUFFER_SIZE) {
-        size_t velicina = BUFFER_SIZE;
-        velicina -= ret_1;
-        while (velicina > 0 || velicina < 0) {
-            printf("Buffer2 [%s]\n", buffer2);
-
-            ret_1 = recv(socket, buffer2, velicina, 0);
-            velicina -= ret_1;
-            // koliko_bytes += ret_1;
-            if (ret_1 < 0) {
-
-                printf("error receving data\n %d", (int) ret_1);
-                exit(1);
-            }
-        }
-
-    }
-
-    if (strcmp(buffer2, "stiglo sve") != 0) {
-
-        printf("NOPE  \n");
-        // fclose(fp);
-        exit(1);
-    }
-
-
-    printf("Socket number %d\n",socket);
-   // close(socket);
-    // sleep(2);
-
-
-    return 0;
-};
-void* file_handeling(void * socket_tmp){
-
-    char buffer[BUFFER_SIZE];
-    char buffer2[BUFFER_SIZE];
-    FILE *fp;
-    FILE *fp1;
-    char *filename=malloc(64);
-    struct data_s data_s1;
-    data_s1=  *((struct data_s *)socket_tmp);
-    int socket=data_s1.socket;
-    strcpy(filename,data_s1.filename);
-    long	file_size;
-
-
-    fp=fopen(filename,"rb");
-
-    fseek(fp, 0, SEEK_END);
-    file_size = ftell(fp);
-    fseek(fp, 0, 0);
-    memset(buffer,0,BUFFER_SIZE);
-    sprintf(buffer,"%li %s " ,file_size,filename);
-    printf("Buffer %s\n",buffer);
-    static int koliko_bytes;
-    ssize_t ret_1=send(socket,buffer,BUFFER_SIZE,0);
-    if(ret_1==0){
-
-        printf("socket closed\n");
-        exit(1);
-    }
-    if(ret_1<0){
-
-        printf("Error sending num_packets!\n\t");
-
-        exit(1);
-    }
-    koliko_bytes+=ret_1;
-    printf("file_size %li",file_size);
-    memset(buffer2,0,BUFFER_SIZE);
-    ret_1 =recv(socket,buffer2,BUFFER_SIZE,0);
-    if(ret_1==0){
-
-        printf("socket closed\n");
-        exit(1);
-    }
-    if (ret_1 < 0) {
-
-        printf("error receing data\n %d", (int) ret_1);
-        exit(1);
-    }
-    if(ret_1<BUFFER_SIZE) {
-        size_t velicina = BUFFER_SIZE;
-        velicina -= ret_1;
-        while (velicina > 0 || velicina < 0) {
-            printf("Buffer2 [%s]\n", buffer2);
-
-            ret_1 = recv(socket, buffer2, velicina, 0);
-            velicina -= ret_1;
-            koliko_bytes += ret_1;
-            if(ret_1==0){
-
-                printf("socket closed\n");
-                exit(1);
-            }
-            if (ret_1 < 0) {
-
-                printf("error receing data\n %d", (int) ret_1);
-                exit(1);
-            }
-        }
-    }
-
-    printf("Buffer %s\n",buffer);
- /*   for(int i=0;i<(file_size/BUFFER_SIZE)+1;i++){
-
-        fread(buffer,1,BUFFER_SIZE,fp );
-        ret_1=send(socket,buffer,BUFFER_SIZE,0);
-
-        if(ret_1<0){
-            printf("Error sending num_packets!\n\t");
-            exit(1);
-        }
-
-        if(ret_1<BUFFER_SIZE){
-
-            size_t velicina=BUFFER_SIZE;
-            while(velicina>0){
-                velicina-=ret_1;
-                ret_1=send(socket,buffer,velicina,0);
-
-            }
-        }
-
-    }*/
-
-    while(1){
-
-        //printf("usli smo u nread while petlju\n");
-        memset(buffer,0,BUFFER_SIZE);
-        memset(buffer2,0,BUFFER_SIZE);
-        size_t nread =fread(buffer,1,BUFFER_SIZE,fp);
-        fwrite(buffer,1,strlen(buffer),fp1);
-        printf("Buffer [%s]\n",buffer);
-        if(nread >0){
-
-
-            ret_1=send(socket,buffer,BUFFER_SIZE,0);
-            koliko_bytes+=ret_1;
-            printf("Return value %d\n",(int)ret_1);
-            if(ret_1==0){
-
-                printf("socket closed\n");
-                exit(1);
-            }
-            if(ret_1<0){
-                printf("Error sending num_packets!\n\t");
-                exit(1);
-            }
-
-            if(ret_1<nread){
-
-                size_t velicina=nread;
-                while(velicina>0){
-                    velicina-=ret_1;
-                    ret_1=send(socket,buffer,velicina,0);
-                    koliko_bytes+=ret_1;
-
-                }
-            }
-
-
-        }
-        if(nread < BUFFER_SIZE){
-
-            if(feof(fp)){
-                printf("end of file \n");
-                printf("the file was sent to %d\n",socket);
-
-
-
-            }
-            if (ferror(fp)){
-                printf("Error reading\n");
-            }
-
-            //printf("%d",count);
-            break;
-        }
-
-        memset(buffer2,0,BUFFER_SIZE);
-        ret_1 =recv(socket,buffer2,BUFFER_SIZE,0);
-        if(ret_1==0){
-
-            printf("socket closed\n");
-            exit(1);
-        }
-        if (ret_1 < 0) {
-
-            printf("error receing data\n %d", (int) ret_1);
-            exit(1);
-        }
-        if(ret_1<BUFFER_SIZE) {
-            size_t velicina = BUFFER_SIZE;
-            velicina -= ret_1;
-            while (velicina > 0 || velicina < 0) {
-                printf("Buffer2 [%s]\n", buffer2);
-
-                ret_1 = recv(socket, buffer2, velicina, 0);
-                velicina -= ret_1;
-                koliko_bytes += ret_1;
-                if(ret_1==0){
-
-                    printf("socket closed\n");
-                    exit(1);
-                }
-                if (ret_1 < 0) {
-
-                    printf("error receing data\n %d", (int) ret_1);
-                    exit(1);
-                }
-            }
-
-        }
-        if (strcmp(buffer2, "stiglo sve") != 0) {
-
-            printf("NOPE  \n");
-            fclose(fp);
-            exit(1);
-        }
-
-
-    }
-
-    printf("poslali file\n");
-    fclose(fp);
-    memset(buffer,0,BUFFER_SIZE);
-    strcpy(buffer,"end of file");
-    ret_1=send(socket,buffer,BUFFER_SIZE,0);
-    koliko_bytes+=ret_1;
-    if(ret_1<0){
-        printf("Error sending num_packets!\n\t");
-        exit(1);
-    }
-
-    if(ret_1<BUFFER_SIZE) {
-
-        size_t velicina = BUFFER_SIZE;
-        while (velicina > 0) {
-            velicina -= ret_1;
-            ret_1 = send(socket, buffer, velicina, 0);
-            koliko_bytes+=ret_1;
-            if (ret_1 < 0) {
-
-                printf("error receing data\n %d", (int) ret_1);
-                exit(1);
-            }
-        }
-
-    }
-    printf("number of bytes sent %d",koliko_bytes);
-    printf("end of file  msg\n");
-    ret_1 =recv(socket,buffer,BUFFER_SIZE,0);
-    if (ret_1 < 0) {
-
-        printf("error receing data\n %d", (int) ret_1);
-        exit(1);
-    }
-    if(ret_1<BUFFER_SIZE) {
-        size_t velicina = BUFFER_SIZE;
-        velicina -= ret_1;
-        while (velicina > 0 || velicina < 0) {
-            printf("Buffer [%s]\n", buffer);
-
-            ret_1 = recv(socket, buffer, velicina, 0);
-            velicina -= ret_1;
-            koliko_bytes += ret_1;
-            if (ret_1 < 0) {
-
-                printf("error receing data\n %d", (int) ret_1);
-                exit(1);
-            }
-        }
-
-    }
-    if (strcmp(buffer, "stiglo sve") == 0) {
-
-        printf("proslo sve kako treba \n");
-    }
-
-    fclose(fp1);
-return 0;
-};
 /*
 **  splitFile
 **  Splits an existing input file into multiple output files with a specified
@@ -841,6 +449,8 @@ void test(){
 
     int fp,fp1 ;
     char buffer[BUFFER_SIZE];
+    char buffer2[BUFFER_SIZE2];
+    char write_b[4];
     fp= open("rc.jpg",O_RDONLY,S_IREAD);
     // fp2=creat("test.jpg",);
     fp1=open("rc1.jpg", O_RDWR | O_APPEND | O_CREAT | O_TRUNC,S_IWRITE | S_IREAD);
@@ -856,8 +466,27 @@ void test(){
     size_t  read1;
     while ((read1=(size_t)read(fp,buffer,BUFFER_SIZE))>0){
 
-         //   printf("Buffer %s\n",buffer);
-      int write1 = (int)write(fp1,buffer,read1);
+
+      uint16_t write1 = (uint16_t)write(fp1,buffer,read1);
+        uint16_t write_test=0;
+
+        sprintf(write_b,"%" SCNu16 "",write1);
+
+        memset(buffer2,0,BUFFER_SIZE2);
+        memcpy(buffer2+0, write_b, strlen(write_b));
+       printf("BUffer2 %s\n",buffer2);
+        memcpy(buffer2+4,buffer,BUFFER_SIZE);
+        printf("BUffer2 %s\n",buffer2);
+       printf("BUffer %s\n",buffer);
+        char b[4];
+        memcpy(b+0,buffer2+0,sizeof(b));
+        sscanf(b,"%" SCNu16 "",&write_test);
+        char b2[BUFFER_SIZE];
+        memset(b2,0,BUFFER_SIZE);
+        memcpy(b2+0,buffer2+4,BUFFER_SIZE);
+        printf("B2 %s\n",b2);
+        int t= strcmp(buffer,b2);
+
         printf("write %d \n",write1);
 
     }

@@ -130,7 +130,7 @@ int main(int argc, char *argv[]) {
 
 
     FILE *fp;
-    char *filename="log.txt";
+    char *filename="rc.jpg";
     fp=fopen(filename,"r");
     long	file_size;
     fseek(fp, 0, SEEK_END);
@@ -161,8 +161,8 @@ int main(int argc, char *argv[]) {
 
     for(int i=0;i<num_pthreads;i++){
         memset(&data_s1[i],0,sizeof(struct data_s));
-        data_s1[i].file_position_b=(int)numb_bytes*i;
-        data_s1[i].file_position_e=(int)numb_bytes*(i+1);
+        data_s1[i].file_position_b=numb_bytes*i;
+        data_s1[i].file_position_e=numb_bytes*(i+1);
     }
     if(data_s1[num_pthreads-1].file_position_e!=file_size){
         data_s1[num_pthreads-1].file_position_e=(int)file_size;
@@ -212,34 +212,6 @@ int main(int argc, char *argv[]) {
 
 
 
-/*     struct data_s *data_s1=calloc(num_pthreads,sizeof(struct data_s));
-
-
- strcpy(data_s1->filename,filename);
- data_s1->socket=new_fd;
-    data_s1->file_size=(int)file_size;
-    data_s1->file_position_b=0;
-    data_s1->file_position_e=numb_bytes;
-    data_s1->numb_packets=(int)numb_packets;
-    data_s1->pack_number=1;*/
-//ret2= pthread_create(&t2,NULL,send_files,&new_fd);
-/* if(ret2!=0){
-     // if( pthread_create(&t2, NULL, slanje, &info)){
-     printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
-     exit(1);
-
- }*/
-
-//  send_files(&new_fd);
-//ret2=  pthread_create(&t,NULL,send_files,&new_fd1);
-/* if(ret2!=0){
-     // if( pthread_create(&t2, NULL, slanje, &info)){
-     printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
-     exit(1);
-
- }*/
-/* pthread_join(t,NULL);
- pthread_join(t2,NULL);*/
 
 
  if (pthread_mutex_init(&m, NULL) != 0) {
@@ -249,25 +221,12 @@ int main(int argc, char *argv[]) {
 
 
 
-
-//  splitFile(filename,  /*3000000 */((size_t)file_size/2)+1 );
-  //  reassemble(4,filename);
     clock_t begin = clock();
-   // merge();
+
 
 /* here, do your time-consuming job */
 
-   // strcpy(data_s1->filename,filename);
-  //  data_s1->socket=new_fd;
-   /* ret2=  pthread_create(&t,NULL,file_handeling,data_s1);
-    if(ret2!=0){
-        // if( pthread_create(&t2, NULL, slanje, &info)){
-        printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
-        exit(1);
 
-    }*/
-   // pthread_join(t,NULL);
- //   file_handeling(new_fd);
 
     clock_t end = clock();
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
@@ -280,9 +239,9 @@ int main(int argc, char *argv[]) {
     printf("sve proslo kako treba\n");
     pthread_mutex_destroy(&m);
   //  printf("file_size %li \n",file_size);
-
+    test();
   //  free(data_s1);
-    close(sockfd);
+ //   close(sockfd);
 
 return 0;
 }

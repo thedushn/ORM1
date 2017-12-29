@@ -135,8 +135,7 @@ int main(int argc, char *argv[]) {
     long	file_size;
     fseek(fp, 0, SEEK_END);
     file_size = ftell(fp);
-    //file_size=15555;
-    fseek(fp, 0, 0);
+    //file_size=15555;    fseek(fp, 0, 0);
     sprintf(buffer,"%li",file_size);
     fclose(fp);
     /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
@@ -220,7 +219,6 @@ int main(int argc, char *argv[]) {
  }
 
 
-
     clock_t begin = clock();
 
 
@@ -239,7 +237,7 @@ int main(int argc, char *argv[]) {
     printf("sve proslo kako treba\n");
     pthread_mutex_destroy(&m);
   //  printf("file_size %li \n",file_size);
-    test();
+ //  test();
   //  free(data_s1);
  //   close(sockfd);
 

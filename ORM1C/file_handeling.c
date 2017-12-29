@@ -336,11 +336,13 @@ void *create_file(void * socket_tmp){
             // sscanf(buffer_4,"%d ",&broj_bites);
             char broj_bites_c[4];
             memcpy(broj_bites_c+0,buffer_4,sizeof(broj_bites_c));
-            sscanf(broj_bites_c,"%d ",&broj_bites);
-            memcpy(buffer+0,buffer_4+4,(size_t)broj_bites);
+            sscanf(broj_bites_c,"%d",&broj_bites);
+        //    memcpy(buffer+0,buffer_4+4,(size_t)broj_bites);
+            memcpy(buffer+0,buffer_4+4,BUFFER_SIZE);
 
             memset(buffer_2,0,BUFFER_SIZE);
-            strcpy(buffer_2,buffer);
+           // strcpy(buffer_2,buffer);
+            strcpy(buffer_2,"stiglo sve");
             ret=send(socket,buffer_2,BUFFER_SIZE,0);
 
             if(ret<BUFFER_SIZE) {
@@ -380,7 +382,7 @@ void *create_file(void * socket_tmp){
                // exit(1);.
                 break;
             }*/
-            ssize_t j= strlen(buffer);
+          //  ssize_t j= strlen(buffer);
          //   printf("string len of buffer %d  Buffer[%s]\n",(int) j,buffer);
 
 

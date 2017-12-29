@@ -20,7 +20,8 @@ void * new_file(void *data_temp){
         char buffer3[BUFFER_SIZE2];
         char write_b[4];
         FILE *fp;
-        int fp1;
+    FILE * fp_temp;
+        int fd;
         int fp2;
         ssize_t ret_1;
         char *filename=malloc(64);
@@ -36,16 +37,18 @@ void * new_file(void *data_temp){
 
 
         fp=fopen(data_s1.filename,"rb");
+        fp_temp=fopen("rc1.jpg","wb");
+
       //  fp=fopen(data_s1.filename,"rb");
-    fp1= open(data_s1.filename,O_RDONLY,S_IREAD);
+    //fd= open(data_s1.filename,O_RDONLY,S_IREAD);
    // fp2=creat("test.jpg",);
    // fp2=open("test1.txt",O_WRONLY| O_CREAT,S_IWRITE);
-    if(fp1<=0){
+   /* if(fd<=0){
         printf("open failed, errno = %d\n", errno);
         exit(1);
 
-    }
-        if (fp == NULL) {
+    }*/
+        if (fp == NULL || fp_temp==NULL) {
             printf("open failed, errno = %d\n", errno);
             exit(1);
         }
@@ -203,18 +206,19 @@ void * new_file(void *data_temp){
         size_t nread;
         /*     size_t nread =fread(buffer,1,BUFFER_SIZE,fp);
              printf("Buffer %s \n",buffer);
-              ssize_t read1=  read(fp1,buffer4,BUFFER_SIZE);
+              ssize_t read1=  read(fd,buffer4,BUFFER_SIZE);
              printf("Buffer4 %s \n",buffer4);
               ssize_t  write1=  write(fp2,buffer4,(size_t)read1);*/
 
 
-        nread=(size_t)read(fp1,buffer,BUFFER_SIZE);
+       // nread=(size_t)read(fd,buffer,BUFFER_SIZE);
+        nread=fread(buffer,1,BUFFER_SIZE,fp);
 
         read_temp+=nread;
        if(nread>koliko_treba || nread==koliko_treba){
 
 
-            strncpy(buffer2,buffer,(size_t)koliko_treba);
+            memcpy(buffer2,buffer,(size_t)koliko_treba);
 
            nread=(size_t)koliko_treba;
            koliko_treba-=koliko_treba;
@@ -224,7 +228,7 @@ void * new_file(void *data_temp){
 
 
             koliko_treba-=nread;
-            strcpy(buffer2,buffer);
+            memcpy(buffer2,buffer,nread);
         }
 
        // (size_t)(data_s1.file_position_e-data_s1.file_position_b)
@@ -235,7 +239,7 @@ void * new_file(void *data_temp){
         sprintf(write_b,"%" SCNu16 "",(__uint16_t)nread);
         memset(buffer3,0,BUFFER_SIZE2);
         memcpy(buffer3+0, write_b,sizeof(write_b));
-        memcpy(buffer3+4,buffer2,sizeof(buffer2));
+        memcpy(buffer3+4,buffer2,BUFFER_SIZE);
                 //sprintf(buffer3,"%" SCNu16 "",packet_size);
         printf("Strlen Buf3 %d \n",(int)strlen(buffer3));
 
@@ -281,7 +285,7 @@ void * new_file(void *data_temp){
         ret_1 =recv(socket,buffer,BUFFER_SIZE,0);
         if (ret_1 < 0) {
 
-            printf("error receing data\n %d", (int) ret_1);
+            printf("error receving data\n %d", (int) ret_1);
             exit(1);
         }
         if(ret_1<BUFFER_SIZE) {
@@ -295,30 +299,51 @@ void * new_file(void *data_temp){
                 koliko_bytes += ret_1;
                 if (ret_1 < 0) {
 
-                    printf("error receing data\n %d", (int) ret_1);
+                    printf("error receving data\n %d", (int) ret_1);
                     exit(1);
                 }
             }
 
         }
         /// ako nije dobro primljeno
-        if (strcmp(buffer2, buffer) != 0) {
+        if(strcmp(buffer, "stiglo sve") == 0){
+
+            char buffer_temp [BUFFER_SIZE];
+            memset(buffer_temp,0,BUFFER_SIZE);
+            memcpy(buffer_temp,buffer3+4,BUFFER_SIZE);
+
+          size_t write_temp= fwrite(buffer_temp,1,nread,fp_temp);
+
+            //   printf("write [%d] \n",(int)write_temp);
+
+        }
+        else{
+
+            printf("NOPE  \n");
+            fclose(fp);
+
+            exit(1);
+        }
+     /*   if (strcmp(buffer2, buffer) != 0) {
 
             printf("NOPE  \n");
             fclose(fp);
             exit(1);
-        }
+        }*/
 
 
 
     }
 
+
+
     printf("koliko bytes poslato %d\n",koliko_bytes);
     printf("koliko treba %d\n",koliko_treba_1);
     printf("izasli smo iz thread\n");
     printf("koliko podataka smo iscitali %d\n",(int)read_temp);
-    close(fp1);
+    close(fd);
     close(fp2);
+    fclose(fp_temp);
         return 0;
 }
 
@@ -467,17 +492,17 @@ void test(){
     while ((read1=(size_t)read(fp,buffer,BUFFER_SIZE))>0){
 
 
-      uint16_t write1 = (uint16_t)write(fp1,buffer,read1);
+        uint16_t write1 = (uint16_t)write(fp1,buffer,read1);
         uint16_t write_test=0;
 
         sprintf(write_b,"%" SCNu16 "",write1);
 
         memset(buffer2,0,BUFFER_SIZE2);
         memcpy(buffer2+0, write_b, strlen(write_b));
-       printf("BUffer2 %s\n",buffer2);
+        printf("BUffer2 %s\n",buffer2);
         memcpy(buffer2+4,buffer,BUFFER_SIZE);
         printf("BUffer2 %s\n",buffer2);
-       printf("BUffer %s\n",buffer);
+        printf("BUffer %s\n",buffer);
         char b[4];
         memcpy(b+0,buffer2+0,sizeof(b));
         sscanf(b,"%" SCNu16 "",&write_test);

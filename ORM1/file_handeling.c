@@ -8,11 +8,114 @@
 #include <sys/stat.h>
 #include <inttypes.h>
 #include <netinet/in.h>
+#include <pthread.h>
+#include <arpa/inet.h>
 #include "file_handeling.h"
 #define BUFFER_SIZE 1400
 #define BUFFER_SIZE2 1404
 
+pthread_mutex_t m =PTHREAD_MUTEX_INITIALIZER;
+void *get_in_addr(struct sockaddr *sa)
+{
+    if (sa->sa_family == AF_INET) {
+        return &(((struct sockaddr_in*)sa)->sin_addr);
+    }
 
+    return &(((struct sockaddr_in6*)sa)->sin6_addr);
+}
+void * new_connection(void *data_temp){
+
+    pthread_attr_t attr;
+
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+    char s[INET6_ADDRSTRLEN];
+    struct name_s name_s1;
+    name_s1=  *((struct name_s *)data_temp);
+
+    pthread_t  t[name_s1.thread_num];
+    socklen_t sin_size;
+    struct sockaddr_storage their_addr;
+
+    struct data_s data_s1[name_s1.thread_num];
+
+
+    FILE *fp;
+
+    fp=fopen(name_s1.filename,"r");
+    long	file_size;
+    fseek(fp, 0, SEEK_END);
+    file_size = ftell(fp);
+    //file_size=15555;    fseek(fp, 0, 0);
+
+    fclose(fp);
+
+
+
+    /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
+    printf("file_size %li \n",file_size);
+    float numb_packets=0;
+
+
+    int numb_bytes=(int)((file_size/name_s1.thread_num));
+
+    for(int i=0;i<name_s1.thread_num;i++){
+        memset(&data_s1[i],0,sizeof(struct data_s));
+        data_s1[i].file_position_b=numb_bytes*i;
+        data_s1[i].file_position_e=numb_bytes*(i+1);
+    }
+    if(data_s1[name_s1.thread_num-1].file_position_e!=file_size){
+        data_s1[name_s1.thread_num-1].file_position_e=(int)file_size;
+    }
+    for(int i=0;i<name_s1.thread_num;i++){
+        //memset(&data_s1[i],0,sizeof(struct data_s));
+        strcpy(data_s1[i].filename,name_s1.filename);
+        data_s1[i].file_size=(int)file_size;
+        // data_s1[i].file_position_b=(int)numb_bytes*i;
+        // data_s1[i].file_position_e=(int)numb_bytes*(i+1);
+        data_s1[i].numb_packets=(int)numb_packets*(i+1);
+        data_s1[i].pack_number=i;
+        //  new_file(&data_s1[i]);
+        {  // main accept() loop
+            sin_size = sizeof their_addr;
+            pthread_mutex_lock(&m);
+            data_s1[i].socket = accept(name_s1.socket, (struct sockaddr *) &their_addr, &sin_size);
+            if (data_s1[i].socket == -1) {
+                perror("accept");
+
+            }
+            pthread_mutex_unlock(&m);
+        }
+
+        inet_ntop(their_addr.ss_family,
+                  get_in_addr((struct sockaddr *) &their_addr),
+                  s, sizeof s);
+        printf("server: got connection from %s\n", s);
+
+        pthread_create(&t[i],NULL,new_file,&data_s1[i]);
+        // new_file(&data_s1[i]);
+
+
+    }
+    void *status;
+    pthread_attr_destroy(&attr);
+
+    for(int i=0;i<name_s1.thread_num;i++){
+
+
+        int rc= pthread_join(t[i],&status);
+        if (rc) {
+            printf("ERROR; return code from pthread_join() is %d\n", rc);
+            exit(-1);
+        }
+        printf("Main: completed join with thread %d having a status of %ld\n",i,(long)status);
+    }
+
+
+
+    return  0;
+
+}
 void * new_file(void *data_temp){
 
         char buffer[BUFFER_SIZE];
@@ -70,7 +173,7 @@ void * new_file(void *data_temp){
 
 
 
-    sprintf(buffer,"%s %d  %d %d %d" ,filename,koliko_treba,data_s1.file_position_b,data_s1.file_position_e,data_s1.pack_number);
+    sprintf(buffer,"%s %d  %d %d %d" ,filename,koliko_treba,data_s1.file_position_b,data_s1.file_position_e,data_s1.pack_number+1);
     printf("Buffer %s \n",buffer);
     ssize_t ret= send(socket,buffer,BUFFER_SIZE,0);
     if(ret<BUFFER_SIZE) {
@@ -469,6 +572,76 @@ void merge(){
 
 }
 
+void * send_filename(void *socket_tmp){
+
+    printf("usli smo u send_files\n");
+
+    struct name_s name_s1=*(struct name_s *) socket_tmp;
+    int socket= name_s1.socket;
+    char buffer[BUFFER_SIZE];
+    char numbers[4];
+    sprintf(numbers,"%" SCNu16 "",name_s1.thread_num);
+    memcpy(buffer,numbers,sizeof(numbers));
+    memcpy(buffer+sizeof(numbers),name_s1.filename,sizeof(name_s1.filename));
+//    strcpy(buffer,name_s1.filename);
+    ssize_t ret= send(socket,buffer,BUFFER_SIZE,0);
+    if(ret<BUFFER_SIZE) {
+        size_t velicina = BUFFER_SIZE;
+        velicina -= ret;
+        while (velicina > 0 || velicina < 0) {
+            //  printf("Buffer2 [%s]\n", buffer_2);
+
+            ret = send(socket, buffer, velicina, 0);
+            velicina -= ret;
+            //  koliko_bytes += ret;
+            if (ret < 0) {
+
+                printf("error sending data\n %d", (int) ret);
+                exit(1);
+            }
+        }
+    }
+    char buffer2[BUFFER_SIZE];
+    memset(buffer2,0,BUFFER_SIZE);
+    ssize_t  ret_1 =recv(socket,buffer2,BUFFER_SIZE,0);
+    if (ret_1 < 0) {
+
+        printf("error receing data\n %d", (int) ret_1);
+        exit(1);
+    }
+    if(ret_1<BUFFER_SIZE) {
+        size_t velicina = BUFFER_SIZE;
+        velicina -= ret_1;
+        while (velicina > 0 || velicina < 0) {
+            printf("Buffer2 [%s]\n", buffer2);
+
+            ret_1 = recv(socket, buffer2, velicina, 0);
+            velicina -= ret_1;
+            // koliko_bytes += ret_1;
+            if (ret_1 < 0) {
+
+                printf("error receing data\n %d", (int) ret_1);
+                exit(1);
+            }
+        }
+
+    }
+
+    if (strcmp(buffer2, "stiglo sve") != 0) {
+
+        printf("NOPE  \n");
+        // fclose(fp);
+        exit(1);
+    }
+
+
+    printf("Socket number %d\n",socket);
+    //  close(socket);
+    // sleep(2);
+
+
+    return 0;
+};
 void test(){
 
 

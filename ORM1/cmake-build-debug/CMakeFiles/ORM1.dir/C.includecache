@@ -17,6 +17,10 @@ inttypes.h
 -
 netinet/in.h
 -
+pthread.h
+-
+arpa/inet.h
+-
 file_handeling.h
 /home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/file_handeling.h
 
@@ -32,6 +36,8 @@ string.h
 dirent.h
 -
 unistd.h
+-
+pthread.h
 -
 
 /home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/main.c

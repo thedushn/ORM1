@@ -14,7 +14,7 @@
 #include <arpa/inet.h>
 #include <math.h>
 #define  BUFFER_SIZE 1400
-pthread_mutex_t m;
+
 void sigchld_handler(int s)
 {
     // waitpid() might overwrite errno, so we save and restore it:
@@ -24,20 +24,17 @@ void sigchld_handler(int s)
 
     errno = saved_errno;
 }
-void *get_in_addr(struct sockaddr *sa)
-{
-    if (sa->sa_family == AF_INET) {
-        return &(((struct sockaddr_in*)sa)->sin_addr);
-    }
 
-    return &(((struct sockaddr_in6*)sa)->sin6_addr);
-}
 void conection(int * socket_new,char *port){
 
 
 }
 int main(int argc, char *argv[]) {
 
+
+    pthread_t t_main[10];
+    int connections=10;
+    int num_connections=0;
     int num_pthreads=4;
     pthread_attr_t attr;
     pthread_t t[num_pthreads], t2;
@@ -45,7 +42,7 @@ int main(int argc, char *argv[]) {
     int ret2=0;
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-
+    struct name_s name_s1[num_connections];
 
    if (argc < 2) {
 
@@ -54,6 +51,35 @@ int main(int argc, char *argv[]) {
     }
     // uint16_t portnum=(uint16_t)atoi(argv[1]);
 
+
+
+    FILE *fp;
+    char *filename="log.txt";
+    fp=fopen(filename,"r");
+    long	file_size;
+    fseek(fp, 0, SEEK_END);
+    file_size = ftell(fp);
+    //file_size=15555;    fseek(fp, 0, 0);
+    sprintf(buffer,"%li",file_size);
+    fclose(fp);
+
+
+
+    /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
+    printf("file_size %li \n",file_size);
+    float numb_packets=0;
+
+    if((int)file_size>BUFFER_SIZE){
+
+        numb_packets=(((float)file_size/BUFFER_SIZE));
+        numb_packets=   ceilf(numb_packets);
+    }
+    else
+    {
+        numb_packets=1;
+    }
+
+    int numb_bytes=(int)((file_size/num_pthreads));
 
 
     int sockfd=0;
@@ -124,37 +150,40 @@ int main(int argc, char *argv[]) {
 
     printf("server: waiting for connections...\n");
 
+  while(num_connections <10)  {
+
+        {  // main accept() loop
+            sin_size = sizeof their_addr;
+            name_s1[num_connections].socket = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
+            if (name_s1[num_connections].socket == -1) {
+                perror("accept");
+
+            }
+        }
+        inet_ntop(their_addr.ss_family,
+                  get_in_addr((struct sockaddr *) &their_addr),
+                  s, sizeof s);
+        printf("server: got connection from %s\n", s);
+        name_s1[num_connections].thread_num=(uint16_t)num_pthreads;
+        strcpy(name_s1[num_connections].filename,filename);
+        send_filename(&name_s1[num_connections]);
+        name_s1[num_connections].socket=sockfd;
+
+        pthread_create(&t_main[num_connections],NULL,new_connection,&name_s1[num_connections]);
 
 
-
-
-
-    FILE *fp;
-    char *filename="rc.jpg";
-    fp=fopen(filename,"r");
-    long	file_size;
-    fseek(fp, 0, SEEK_END);
-    file_size = ftell(fp);
-    //file_size=15555;    fseek(fp, 0, 0);
-    sprintf(buffer,"%li",file_size);
-    fclose(fp);
-    /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
-    printf("file_size %li \n",file_size);
-    float numb_packets=0;
-
-    if((int)file_size>BUFFER_SIZE){
-
-        numb_packets=(((float)file_size/BUFFER_SIZE));
-    numb_packets=   ceilf(numb_packets);
-    }
-    else
-    {
-        numb_packets=1;
+    pthread_join(t_main[num_connections],NULL);
+      num_connections++;
     }
 
-    int numb_bytes=(int)((file_size/num_pthreads));
+
+
+
+
+
 
       //  numb_bytes=ceilf(numb_bytes);
+/*
 
     struct data_s data_s1[num_pthreads];
 
@@ -207,16 +236,14 @@ int main(int argc, char *argv[]) {
         }
         printf("Main: completed join with thread %d having a status of %ld\n",i,(long)status);
     }
+*/
 
 
 
 
 
 
- if (pthread_mutex_init(&m, NULL) != 0) {
-     printf("\n mutex init failed\n");
-     return 1;
- }
+
 
 
     clock_t begin = clock();
@@ -235,7 +262,7 @@ int main(int argc, char *argv[]) {
 
 
     printf("sve proslo kako treba\n");
-    pthread_mutex_destroy(&m);
+
   //  printf("file_size %li \n",file_size);
  //  test();
   //  free(data_s1);

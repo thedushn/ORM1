@@ -11,6 +11,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <inttypes.h>
 
 #include "file_handeling.h"
 
@@ -34,7 +35,7 @@ void merge (const int broj_thread,char *filename){
     char cwd[1024];
     char *names[broj_thread+1];
     names[broj_thread]=(char *) malloc(64);
-
+    char *names_temp="temp";
     //char (*file_name_array)[64];
     getcwd(cwd, sizeof(cwd));
     int t=0;
@@ -49,12 +50,12 @@ void merge (const int broj_thread,char *filename){
         char *temp=malloc(256);
         char *temp1;
         char *endptr;
-        if( strncmp(filename,d_file->d_name,strlen(filename))==0){
+        if( strncmp(names_temp,d_file->d_name,strlen(names_temp))==0){
 
             strcpy(temp,d_file->d_name);
             names[t]=(char *) malloc(64);
             strcpy(names[t],d_file->d_name);
-            temp1=strrchr(temp,'.');
+            temp1=strchr(temp,'.');
             printf("Names %s\n",names[t]);
                 t++;
             //  printf("TEMP %s\n",temp1);
@@ -205,17 +206,17 @@ void merge (const int broj_thread,char *filename){
 
 
 }
-void get_filename(void * socket_tmp){
+const int  get_filename(void * socket_tmp){
 
-    FILE *fp;
+    int fd;
     char buffer[BUFFER_SIZE];
     char buffer_2[BUFFER_SIZE];
     int socket=0;
     ssize_t ret;
-
+   // strcpy(buffer,"rc.jpg");
 
     socket = *(int *) socket_tmp;
-
+        memset(buffer,0,BUFFER_SIZE);
     ret = recv(socket,buffer,BUFFER_SIZE, 0);
     //  koliko_bytes+=ret;
     printf("Return value : [%d]\n",(int)ret);
@@ -270,7 +271,24 @@ void get_filename(void * socket_tmp){
         }
     }
 
-  //  return buffer;
+       char buffer_thread[4];
+    memcpy(buffer_thread,buffer,sizeof(buffer_thread));
+    int thread_number;
+    sscanf(buffer_thread,"%" PRIu16 "",&thread_number);
+    fd=open(buffer, O_RDWR ,S_IWRITE | S_IREAD);
+    if (fd <0 ) {
+       // perror("open");
+       printf("File doenst exist %d \n",fd);
+    }
+    else{
+
+     remove(buffer);
+    }
+    close (fd);
+    stpcpy(name,buffer);
+
+
+    return thread_number;
 
 }
 

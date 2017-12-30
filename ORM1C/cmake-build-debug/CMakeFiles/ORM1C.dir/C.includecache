@@ -25,6 +25,8 @@ fcntl.h
 -
 sys/stat.h
 -
+inttypes.h
+-
 file_handeling.h
 /home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1C/file_handeling.h
 

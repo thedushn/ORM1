@@ -10,15 +10,26 @@
 #include <string.h>
 #include <dirent.h>
 #include <unistd.h>
+#include <pthread.h>
 void* file_handeling(void * socket_tmp);
 int splitFile(char *fileIn, size_t maxSize);
 void reassemble(int broj_sfiles,char *filename);
 void *recv_files(void * socket);
-void *send_files(void *socket);
+void *send_filename(void *socket);
 void merge();
 void *new_file(void *socket_info);
 void test();
+void * new_connection(void * data_temp);
+void *get_in_addr(struct sockaddr *sa);
 
+
+
+struct name_s{
+
+    int socket;
+    __uint16_t thread_num;
+    char filename[64];
+};
 struct data_s{
 
     int socket;

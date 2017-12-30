@@ -65,7 +65,8 @@ int  conection(char * argv1,char *argv2){
 int main(int argc, char *argv[]) {
 
 
-    int num_threads=1;
+    int num_threads=4;
+    int socket_file=0;
     pthread_t  t[num_threads];
 
 
@@ -87,7 +88,12 @@ int main(int argc, char *argv[]) {
         exit(1);
 
     }
+   socket_file= conection(argv[1], argv[2]);
+    if (socket_file< 0) {
 
+        printf("socket failed%d \n", socket_file);
+        exit(1);
+    }
 
     int socket_num[num_threads];
     for(int i=0;i<num_threads;i++) {
@@ -100,6 +106,7 @@ int main(int argc, char *argv[]) {
             exit(1);
         }
     }
+
     for(int i=0;i<num_threads;i++){
 
             printf("Socket %d\n",socket_num[i]);
@@ -131,7 +138,7 @@ int main(int argc, char *argv[]) {
 
 
    // printf("ulazimo u merge\n");
-   // merge(3,"rc.jpg");
+ //   merge(4,"rc.jpg");
 
     printf("sve proslo kako treba\n");
 

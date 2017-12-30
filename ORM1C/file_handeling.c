@@ -48,6 +48,7 @@ void merge (const int broj_thread,char *filename){
         // printf("%s\n", d_file->d_name);
         char *temp=malloc(256);
         char *temp1;
+        char *endptr;
         if( strncmp(filename,d_file->d_name,strlen(filename))==0){
 
             strcpy(temp,d_file->d_name);
@@ -62,8 +63,18 @@ void merge (const int broj_thread,char *filename){
             printf("files %s\n",temp);
 
             printf("TEMP %s\n",temp1);
-            int n=atoi(temp1);
-            printf("N %d \n",n);
+         //   int n=atoi(temp1);
+           int  val =(int) strtol(temp1, &endptr, 0);
+            if ((errno == ERANGE && (val == LONG_MAX || val == LONG_MIN))
+                || (errno != 0 && val == 0)) {
+                perror("strtol");
+                exit(EXIT_FAILURE);
+            }
+            if (endptr == temp1) {
+                fprintf(stderr, "No digits were found\n");
+                exit(EXIT_FAILURE);
+            }
+            printf("N %d \n",val);
 
 
 
@@ -194,6 +205,74 @@ void merge (const int broj_thread,char *filename){
 
 
 }
+void get_filename(void * socket_tmp){
+
+    FILE *fp;
+    char buffer[BUFFER_SIZE];
+    char buffer_2[BUFFER_SIZE];
+    int socket=0;
+    ssize_t ret;
+
+
+    socket = *(int *) socket_tmp;
+
+    ret = recv(socket,buffer,BUFFER_SIZE, 0);
+    //  koliko_bytes+=ret;
+    printf("Return value : [%d]\n",(int)ret);
+    if(ret<0){
+
+        printf("error receving data\n %d",(int)ret);
+        exit(1);
+    }
+    if(ret<BUFFER_SIZE){
+        size_t velicina=BUFFER_SIZE;
+        while(velicina>0){
+            printf("[%s]\n",buffer);
+            velicina-=ret;
+            ret=recv(socket,buffer,velicina, 0);
+
+            if(ret<0){
+
+                printf("error receving data\n %d",(int)ret);
+                exit(1);
+            }
+            if(ret==0){
+
+                printf("error socket closed\n %d",(int)ret);
+                exit(1);
+            }
+            printf("Return value %d\n",(int)ret);
+        }
+    }
+    memset(buffer_2,0,BUFFER_SIZE);
+    strcpy(buffer_2,"stiglo sve");
+    ret=send(socket,buffer_2,BUFFER_SIZE,0);
+
+    if(ret<BUFFER_SIZE) {
+        size_t velicina = BUFFER_SIZE;
+        velicina -= ret;
+        while (velicina > 0 || velicina < 0) {
+            printf("Buffer2 [%s]\n", buffer_2);
+
+            ret = send(socket, buffer_2, velicina, 0);
+            velicina -= ret;
+            //  koliko_bytes += ret;
+            if (ret < 0) {
+
+                printf("error sending data\n %d", (int) ret);
+                exit(1);
+            }
+            if(ret==0){
+
+                printf("error socket closed\n %d",(int)ret);
+                exit(1);
+            }
+        }
+    }
+
+  //  return buffer;
+
+}
 
 void *create_file(void * socket_tmp){
 
@@ -285,7 +364,7 @@ void *create_file(void * socket_tmp){
 
     if(file_size>0){
         memset(buffer_3,0,BUFFER_SIZE);
-        strcat(buffer_3,filename);
+        strcat(buffer_3,"temp");
         strcat(buffer_3,".");
         strcat(buffer_3,filename_f);
        // strcat(buffer_3,filename_b);
@@ -331,11 +410,12 @@ void *create_file(void * socket_tmp){
             int t=0;
           //  printf("buffer4:  [%s]\n",buffer_4);
 
-            int broj_bites;
+              int broj_bites;
 
             // sscanf(buffer_4,"%d ",&broj_bites);
             char broj_bites_c[4];
             memcpy(broj_bites_c+0,buffer_4,sizeof(broj_bites_c));
+
             sscanf(broj_bites_c,"%d",&broj_bites);
         //    memcpy(buffer+0,buffer_4+4,(size_t)broj_bites);
             memcpy(buffer+0,buffer_4+4,BUFFER_SIZE);

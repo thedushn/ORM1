@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/file_handeling.c
+/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/file_handeling.c
 errno.h
 -
 fcntl.h
@@ -18,9 +18,9 @@ inttypes.h
 netinet/in.h
 -
 file_handeling.h
-/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/file_handeling.h
+/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/file_handeling.h
 
-/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/file_handeling.h
+/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/file_handeling.h
 stdio.h
 -
 sys/socket.h
@@ -34,9 +34,9 @@ dirent.h
 unistd.h
 -
 
-/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/main.c
+/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/main.c
 file_handeling.h
-/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/file_handeling.h
+/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/file_handeling.h
 stdio.h
 -
 errno.h
@@ -54,7 +54,7 @@ stdlib.h
 time.h
 -
 pthread.h
-/home/dushn/Desktop/GITORM1/ORM1 GIT/ORM1/ORM1/ORM1/ORM1/pthread.h
+/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1/pthread.h
 arpa/inet.h
 -
 math.h

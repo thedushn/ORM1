@@ -25,21 +25,16 @@ void sigchld_handler(int s)
     errno = saved_errno;
 }
 
-void conection(int * socket_new,char *port){
 
-
-}
 int main(int argc, char *argv[]) {
 
 
     pthread_t t_main[10];
-    int connections=10;
+
     int num_connections=0;
     int num_pthreads=4;
     pthread_attr_t attr;
-    pthread_t t[num_pthreads], t2;
     char buffer[BUFFER_SIZE];
-    int ret2=0;
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     struct name_s name_s1[num_connections];
@@ -65,7 +60,7 @@ int main(int argc, char *argv[]) {
 
 
 
-    /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
+
     printf("file_size %li \n",file_size);
     float numb_packets=0;
 
@@ -166,7 +161,13 @@ int main(int argc, char *argv[]) {
         printf("server: got connection from %s\n", s);
         name_s1[num_connections].thread_num=(uint16_t)num_pthreads;
         strcpy(name_s1[num_connections].filename,filename);
+
+
+        //sending the filename
         send_filename(&name_s1[num_connections]);
+
+
+        //using the server socket to make other sockets
         name_s1[num_connections].socket=sockfd;
 
         pthread_create(&t_main[num_connections],NULL,new_connection,&name_s1[num_connections]);
@@ -178,65 +179,6 @@ int main(int argc, char *argv[]) {
 
 
 
-
-
-
-
-      //  numb_bytes=ceilf(numb_bytes);
-/*
-
-    struct data_s data_s1[num_pthreads];
-
-    for(int i=0;i<num_pthreads;i++){
-        memset(&data_s1[i],0,sizeof(struct data_s));
-        data_s1[i].file_position_b=numb_bytes*i;
-        data_s1[i].file_position_e=numb_bytes*(i+1);
-    }
-    if(data_s1[num_pthreads-1].file_position_e!=file_size){
-        data_s1[num_pthreads-1].file_position_e=(int)file_size;
-    }
-    for(int i=0;i<num_pthreads;i++){
-       //memset(&data_s1[i],0,sizeof(struct data_s));
-        strcpy(data_s1[i].filename,filename);
-        data_s1[i].file_size=(int)file_size;
-       // data_s1[i].file_position_b=(int)numb_bytes*i;
-       // data_s1[i].file_position_e=(int)numb_bytes*(i+1);
-        data_s1[i].numb_packets=(int)numb_packets*(i+1);
-        data_s1[i].pack_number=i;
-      //  new_file(&data_s1[i]);
-        {  // main accept() loop
-            sin_size = sizeof their_addr;
-            data_s1[i].socket = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
-            if (data_s1[i].socket == -1) {
-                perror("accept");
-
-            }
-        }
-
-        inet_ntop(their_addr.ss_family,
-                  get_in_addr((struct sockaddr *) &their_addr),
-                  s, sizeof s);
-        printf("server: got connection from %s\n", s);
-
-        pthread_create(&t[i],NULL,new_file,&data_s1[i]);
-       // new_file(&data_s1[i]);
-
-
-    }
-    void *status;
-    pthread_attr_destroy(&attr);
-
-    for(int i=0;i<num_pthreads;i++){
-
-
-       int rc= pthread_join(t[i],&status);
-        if (rc) {
-            printf("ERROR; return code from pthread_join() is %d\n", rc);
-            exit(-1);
-        }
-        printf("Main: completed join with thread %d having a status of %ld\n",i,(long)status);
-    }
-*/
 
 
 
@@ -266,7 +208,7 @@ int main(int argc, char *argv[]) {
   //  printf("file_size %li \n",file_size);
  //  test();
   //  free(data_s1);
- //   close(sockfd);
+    close(sockfd);
 
 return 0;
 }

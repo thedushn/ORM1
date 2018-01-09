@@ -27,7 +27,7 @@ void *get_in_addr(struct sockaddr *sa);
 struct name_s{
 
     int socket;
-    __uint16_t thread_num;
+    int thread_num;
     char filename[64];
 };
 struct data_s{

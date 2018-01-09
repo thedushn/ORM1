@@ -33,7 +33,7 @@ void merge (const int broj_thread,char *filename){
     DIR *dir;
     struct dirent *d_file;
     char cwd[1024];
-    char *names[broj_thread+1];
+    char *names[broj_thread];
     names[broj_thread]=(char *) malloc(64);
     char *names_temp="temp";
     //char (*file_name_array)[64];
@@ -47,7 +47,7 @@ void merge (const int broj_thread,char *filename){
     }
     while ((d_file=readdir(dir)) != NULL) {
         // printf("%s\n", d_file->d_name);
-        char *temp=malloc(256);
+        char *temp=malloc(64);
         char *temp1;
         char *endptr;
         if( strncmp(names_temp,d_file->d_name,strlen(names_temp))==0){
@@ -69,10 +69,14 @@ void merge (const int broj_thread,char *filename){
             if ((errno == ERANGE && (val == LONG_MAX || val == LONG_MIN))
                 || (errno != 0 && val == 0)) {
                 perror("strtol");
+                free(temp);
+                closedir(dir);
                 exit(EXIT_FAILURE);
             }
             if (endptr == temp1) {
                 fprintf(stderr, "No digits were found\n");
+                free(temp);
+                closedir(dir);
                 exit(EXIT_FAILURE);
             }
             printf("N %d \n",val);
@@ -108,11 +112,12 @@ void merge (const int broj_thread,char *filename){
      static int brojac =2;
      fp_temp= fopen(names[0], "rb");
      printf("Trying to open %s\n",names[0]);
-     char *temp=malloc(256);
+     char temp[64];
+    // char *temp=malloc(256);
      char *temp1;
         if (fp_temp == NULL) {
 
-            free(temp);
+           // free(temp);
             errnum = errno;
 
             fprintf(stderr, "Value of errno: %d\n", errno);
@@ -174,7 +179,7 @@ void merge (const int broj_thread,char *filename){
      } else {
          printf("Error: unable to delete the file\n");
      }
-     free(temp);
+  //   free(temp);
 
      memset(names[0],0,64);
     // names[0]="final";
@@ -196,7 +201,8 @@ void merge (const int broj_thread,char *filename){
     strcpy(temp3,names[0]);*/
 
     rename(names[0],filename);
-    for(int i=0;i<=broj_thread;i++){
+    for(int i=0;i<broj_thread;i++){
+    //for(int i=0;i<=broj_thread;i++){
 
         free(names[i]);
 
@@ -206,7 +212,7 @@ void merge (const int broj_thread,char *filename){
 
 
 }
-const int  get_filename(void * socket_tmp){
+const int get_filename(void * socket_tmp, char *name, int * thread_num){
 
     int fd;
     char buffer[BUFFER_SIZE];
@@ -274,21 +280,22 @@ const int  get_filename(void * socket_tmp){
        char buffer_thread[4];
     memcpy(buffer_thread,buffer,sizeof(buffer_thread));
     int thread_number;
-    sscanf(buffer_thread,"%" PRIu16 "",&thread_number);
-    fd=open(buffer, O_RDWR ,S_IWRITE | S_IREAD);
+    sscanf(buffer_thread,"%d",&thread_number);
+    fd=open(buffer+4, O_RDWR ,S_IWRITE | S_IREAD);
     if (fd <0 ) {
        // perror("open");
+        close (fd);
        printf("File doenst exist %d \n",fd);
     }
     else{
-
+        close (fd);
      remove(buffer);
     }
-    close (fd);
-    stpcpy(name,buffer);
+
+    stpcpy(name,buffer+4);
 
 
-    return thread_number;
+   *thread_num=thread_number;
 
 }
 
@@ -302,11 +309,10 @@ void *create_file(void * socket_tmp){
     ssize_t ret=0;
     int socket=0;
     int file_size=0;
-    int fp1;
+
     int upisano_temp;
-    ssize_t  koliko_treba_upisati;
-   /* char *filename_b=(char *)malloc(64);
-    char *filename_e=(char *)malloc(64);*/
+
+  ssize_t  koliko_treba_upisati=0;
     int filename_b=0;
     int filename_e=0;
    static int koliko_bytes=0;
@@ -400,7 +406,7 @@ void *create_file(void * socket_tmp){
             memset(buffer,0,BUFFER_SIZE);
             memset(buffer_4,0,BUFFER_SIZE2);
             ret = recv(socket,buffer_4,BUFFER_SIZE2, 0);
-            printf("Return value %d\n",(int)ret);
+          //  printf("Return value %d\n",(int)ret);
             koliko_bytes+=ret;
             if(ret<BUFFER_SIZE2){
                 size_t velicina=BUFFER_SIZE2;
@@ -487,7 +493,7 @@ void *create_file(void * socket_tmp){
 
             int write1 =(int)fwrite (buffer, 1,(size_t)broj_bites,fp);
             /*= (int)write(fp1,buffer,(size_t)broj_bites);*/
-            printf("write %d \n",write1);
+          //  printf("write %d \n",write1);
             upisano_temp+=write1;
           /*  koliko_treba_upisati-=write1;
             printf("koliko treba %d \n",koliko_treba_upisati);

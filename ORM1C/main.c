@@ -87,13 +87,24 @@ int main(int argc, char *argv[]) {
         exit(1);
 
     }
+    clock_t begin = clock();
+
+
+/* here, do your time-consuming job */
+
+
+
+
+
    socket_file= conection(argv[1], argv[2]);
     if (socket_file< 0) {
 
         printf("socket failed%d \n", socket_file);
         exit(1);
     }
-    int num_threads=  get_filename(&socket_file);
+    char name[256];
+    int num_threads=0;
+    get_filename(&socket_file,name,&num_threads );
     pthread_t  t[num_threads];
     int socket_num[num_threads];
     for(int i=0;i<num_threads;i++) {
@@ -137,12 +148,20 @@ int main(int argc, char *argv[]) {
 
 
    // printf("ulazimo u merge\n");
-    merge(4,name);
+    merge(num_threads,name);
   //  get_filename(&num_threads);
     printf("name %s\n",name);
     printf("sve proslo kako treba\n");
+        for(int i=0;i<num_threads;i++){
 
+            close(socket_num[i]);
+        }
+        close(socket_file);
+    clock_t end = clock();
 
+    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+    printf("TIME spent %f \n",time_spent);
 
 
 

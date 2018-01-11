@@ -7,8 +7,8 @@
 #include "file_handeling.h"
 
 #define  BUFFER_SIZE 1400
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-int  conection(char * argv1,char *argv2){
+
+int  conection(char * argv1, char * argv2){
 
 
     struct addrinfo hints, *servinfo, *p;
@@ -19,7 +19,7 @@ int  conection(char * argv1,char *argv2){
     hints.ai_family = AF_UNSPEC; // use AF_INET6 to force IPv6
     hints.ai_socktype = SOCK_STREAM;
     //192.168.122.70 127.0.0.1
-    if ((rv = getaddrinfo( argv2,argv1, &hints, &servinfo)) != 0) {
+    if ((rv = getaddrinfo(argv2,argv1, &hints, &servinfo)) != 0) {
         fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
         exit(1);
     }
@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
 
 
 
-    if(argc<3){
+   /* if(argc<3){
 
         printf("port not provided \n");
         printf("ip_address not provided \n");
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
         printf("argv failed %s",argv[2]);
         exit(1);
 
-    }
+    }*/
     clock_t begin = clock();
 
 
@@ -102,15 +102,17 @@ int main(int argc, char *argv[]) {
         printf("socket failed%d \n", socket_file);
         exit(1);
     }
-    char name[256];
+    char *name=(char *)calloc(64,sizeof(char));
     int num_threads=0;
     get_filename(&socket_file,name,&num_threads );
-    pthread_t  t[num_threads];
+  //  pthread_t  t[num_threads];
+    pthread_t *t ;
+    t=(pthread_t *)malloc(num_threads * sizeof(pthread_t ));
     int socket_num[num_threads];
     for(int i=0;i<num_threads;i++) {
 
 
-        socket_num[i] = conection(argv[1], argv[2]);
+        socket_num[i] = conection(argv[1],argv[2]);
         if (socket_num[i] < 0) {
 
             printf("socket failed%d \n", socket_num[i]);
@@ -123,7 +125,7 @@ int main(int argc, char *argv[]) {
             printf("Socket %d\n",socket_num[i]);
         int ret2=   pthread_create(&t[i],NULL,create_file,&socket_num[i]);
         if(ret2!=0){
-            // if( pthread_create(&t2, NULL, slanje, &info)){
+
             printf("ERROR: Return Code from pthread_create() is %d\n",ret2);
             exit(1);
 
@@ -162,7 +164,8 @@ int main(int argc, char *argv[]) {
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 
     printf("TIME spent %f \n",time_spent);
-
+    free(name);
+  free(t);
 
 
     return 0;

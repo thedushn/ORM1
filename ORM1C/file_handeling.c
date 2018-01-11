@@ -33,8 +33,9 @@ void merge (const int broj_thread,char *filename){
     DIR *dir;
     struct dirent *d_file;
     char cwd[1024];
-    char *names[broj_thread];
-    names[broj_thread]=(char *) malloc(64);
+ //   char *names[broj_thread];
+  //  names[broj_thread]=(char *) malloc(64);
+    char **names= (char **)malloc(broj_thread*(64) * sizeof(char *));
     char *names_temp="temp";
     //char (*file_name_array)[64];
     getcwd(cwd, sizeof(cwd));
@@ -207,12 +208,14 @@ void merge (const int broj_thread,char *filename){
         free(names[i]);
 
     }
+    free(names);
+
     printf("spojili smo \n");
 
 
 
 }
-const int get_filename(void * socket_tmp, char *name, int * thread_num){
+void get_filename(void * socket_tmp, char *name, int * thread_num){
 
     int fd;
     char buffer[BUFFER_SIZE];
@@ -524,7 +527,7 @@ void *create_file(void * socket_tmp){
     fseek(fp, 0, 0);
 
     fclose(fp);
-    /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
+
     printf("file_size %d \n",file_size);
 
 /*    memset(buffer,0,BUFFER_SIZE);
@@ -553,5 +556,6 @@ void *create_file(void * socket_tmp){
    // free(filename_b);
     free(filename_f);
 
+    printf("exiting the thread\n");
     return 0;
 };

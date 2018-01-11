@@ -10,11 +10,183 @@
 #include <netinet/in.h>
 #include <pthread.h>
 #include <arpa/inet.h>
+#include <signal.h>
+#include <netdb.h>
 #include "file_handeling.h"
 #define BUFFER_SIZE 1400
 #define BUFFER_SIZE2 1404
 
+pthread_cond_t cond =  PTHREAD_COND_INITIALIZER;
 pthread_mutex_t m =PTHREAD_MUTEX_INITIALIZER;
+
+void sigchld_handler(int s)
+{
+    // waitpid() might overwrite errno, so we save and restore it:
+    int saved_errno = errno;
+
+    while(waitpid(-1, NULL, WNOHANG) > 0);
+
+    errno = saved_errno;
+}
+void server_prog(char *argv1, char *argv2){
+
+
+    pthread_t t_main[10];
+
+    int num_connections=0;
+    int num_pthreads=5;
+    pthread_attr_t attr;
+    char buffer[BUFFER_SIZE];
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+    struct name_s name_s1[num_connections];
+
+
+    // uint16_t portnum=(uint16_t)atoi(argv[1]);
+
+
+
+    FILE *fp;
+    char *filename="2.avi";
+    fp=fopen(filename,"r");
+    long	file_size;
+    fseek(fp, 0, SEEK_END);
+    file_size = ftell(fp);
+    //file_size=15555;    fseek(fp, 0, 0);
+    sprintf(buffer,"%li",file_size);
+    fclose(fp);
+
+
+
+
+  //  printf("file_size %li \n",file_size);
+    float numb_packets=0;
+
+    if((int)file_size>BUFFER_SIZE){
+
+        numb_packets=(((float)file_size/BUFFER_SIZE));
+
+    }
+    else
+    {
+        numb_packets=1;
+    }
+
+    int numb_bytes=(int)((file_size/num_pthreads));
+
+
+    int sockfd=0;
+    int new_fd;  // listen on sock_fd, new connection on new_fd
+    struct addrinfo hints, *servinfo, *p;
+    struct sockaddr_storage their_addr; // connector's address information
+    socklen_t sin_size;
+    struct sigaction sa;
+    int yes = 1;
+    char s[INET6_ADDRSTRLEN];
+    int rv;
+
+    memset(&hints, 0, sizeof hints);
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags = AI_PASSIVE; // use my IP
+
+    if ((rv = getaddrinfo(NULL, argv1, &hints, &servinfo)) != 0) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+        // return 1;
+        exit(1);
+    }
+
+    // loop through all the results and bind to the first we can
+    for (p = servinfo; p != NULL; p = p->ai_next) {
+        if ((sockfd = socket(p->ai_family, p->ai_socktype,
+                             p->ai_protocol)) == -1) {
+            perror("server: socket");
+            continue;
+        }
+
+
+        if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &yes,
+                       sizeof(int)) == -1) {
+            perror("setsockopt");
+            exit(1);
+        }
+
+
+        if (bind(sockfd, p->ai_addr, p->ai_addrlen) == -1) {
+            close(sockfd);
+            perror("server: bind");
+            continue;
+        }
+
+        break;
+    }
+
+    freeaddrinfo(servinfo); // all done with this structure
+
+    if (p == NULL) {
+        fprintf(stderr, "server: failed to bind\n");
+        exit(1);
+    }
+
+    if (listen(sockfd, 10) == -1) {
+        perror("listen");
+        exit(1);
+    }
+
+    sa.sa_handler = sigchld_handler; // reap all dead processes
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = SA_RESTART;
+    if (sigaction(SIGCHLD, &sa, NULL) == -1) {
+        perror("sigaction");
+        exit(1);
+    }
+
+    printf("server: waiting for connections...\n");
+
+    while(num_connections <10)  {
+
+
+        if(num_connections>0){
+           printf("cekamo\n");
+            pthread_cond_wait (&cond, &m);
+         //   printf("prosli smo cekanje\n");
+        }
+        {  // main accept() loop
+            printf("main accept loop\n");
+            sin_size = sizeof their_addr;
+            name_s1[num_connections].socket = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
+            if (name_s1[num_connections].socket == -1) {
+                perror("accept");
+
+            }
+        }
+        inet_ntop(their_addr.ss_family,
+                  get_in_addr((struct sockaddr *) &their_addr),
+                  s, sizeof s);
+        printf("server: got connection from %s\n", s);
+        name_s1[num_connections].thread_num=(uint16_t)num_pthreads;
+        strcpy(name_s1[num_connections].filename,filename);
+
+
+        //sending the filename
+        send_filename(&name_s1[num_connections]);
+
+
+        //using the server socket to make other sockets
+        name_s1[num_connections].socket=sockfd;
+
+        pthread_create(&t_main[num_connections],NULL,new_connection,&name_s1[num_connections]);
+        printf("pthread_created %d \n",num_connections);
+
+
+      //    pthread_join(t_main[num_connections],NULL);
+        num_connections++;
+    }
+
+
+
+    close(sockfd);
+}
 void *get_in_addr(struct sockaddr *sa)
 {
     if (sa->sa_family == AF_INET) {
@@ -42,7 +214,7 @@ void * new_connection(void *data_temp){
 
     FILE *fp;
 
-    fp=fopen(name_s1.filename,"r");
+    fp=fopen(name_s1.filename,"rb");
     long	file_size;
     fseek(fp, 0, SEEK_END);
     file_size = ftell(fp);
@@ -52,8 +224,8 @@ void * new_connection(void *data_temp){
 
 
 
-    /// u zavisnosti od broja konekcija delimo file na toliko delova  za sada 4
-    printf("file_size %li \n",file_size);
+    /// u zavisnosti od broja konekcija delimo file na toliko delova
+   // printf("file_size %li \n",file_size);
     float numb_packets=0;
 
 
@@ -90,27 +262,30 @@ void * new_connection(void *data_temp){
         inet_ntop(their_addr.ss_family,
                   get_in_addr((struct sockaddr *) &their_addr),
                   s, sizeof s);
-        printf("server: got connection from %s\n", s);
+        printf("server in thread: got connection from %s\n", s);
 
         pthread_create(&t[i],NULL,new_file,&data_s1[i]);
         // new_file(&data_s1[i]);
 
 
     }
+
     void *status;
     pthread_attr_destroy(&attr);
-
+    pthread_cond_signal(&cond);
+   // printf("poslali smo signal\n");
     for(int i=0;i<name_s1.thread_num;i++){
 
 
         int rc= pthread_join(t[i],&status);
-        printf("thread joined %d\n",i);
+     //   printf("thread joined %d\n",i);
         if (rc) {
             printf("ERROR; return code from pthread_join() is %d\n", rc);
             exit(-1);
         }
         printf("Main: completed join with thread %d having a status of %ld\n",i,(long)status);
     }
+
 
 
 
@@ -129,7 +304,7 @@ void * new_file(void *data_temp){
         struct data_s data_s1;
         data_s1=  *((struct data_s *)data_temp);
         int socket=data_s1.socket;
-        static int koliko_bytes;
+        unsigned int koliko_bytes=0;
         int koliko_treba;
         int koliko_treba_1;
         size_t read_temp=0;
@@ -162,7 +337,7 @@ void * new_file(void *data_temp){
 
 
     sprintf(buffer,"%s %d  %d %d %d" ,data_s1.filename,koliko_treba,data_s1.file_position_b,data_s1.file_position_e,data_s1.pack_number+1);
-    printf("Buffer %s \n",buffer);
+  //  printf("Buffer %s \n",buffer);
     ssize_t ret= send(socket,buffer,BUFFER_SIZE,0);
     if(ret<BUFFER_SIZE) {
         size_t velicina = BUFFER_SIZE;
@@ -477,7 +652,7 @@ void * new_file(void *data_temp){
     printf("koliko treba %d\n",koliko_treba_1);
     printf("izasli smo iz thread\n");
     printf("koliko podataka smo iscitali %d\n",(int)read_temp);
-   // close(fd);
+    close(socket);
   //  close(fp2);
   //  fclose(fp_temp);
         return 0;
@@ -563,7 +738,7 @@ void * send_filename(void *socket_tmp){
 
 
     printf("Socket number %d\n",socket);
-    //  close(socket);
+      close(socket);
     // sleep(2);
 
 

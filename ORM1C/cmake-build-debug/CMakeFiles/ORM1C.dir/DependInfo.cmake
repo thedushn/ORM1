@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1C/file_handeling.c" "/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o"
-  "/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1C/main.c" "/home/dusan/Desktop/Untitled Folder/hello/ORM1/ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/main.c.o"
+  "/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1C/file_handeling.c" "/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/file_handeling.c.o"
+  "/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1C/main.c" "/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1C/cmake-build-debug/CMakeFiles/ORM1C.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

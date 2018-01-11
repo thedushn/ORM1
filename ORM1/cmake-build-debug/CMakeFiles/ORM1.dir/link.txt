@@ -1,1 +1,1 @@
-/usr/bin/cc  -pthread -Wall   -g   CMakeFiles/ORM1.dir/main.c.o CMakeFiles/ORM1.dir/file_handeling.c.o  -o ORM1 -lm 
+/usr/bin/cc   -pthread -Wall   -g   CMakeFiles/ORM1.dir/main.c.o CMakeFiles/ORM1.dir/file_handeling.c.o  -o ORM1 -lm 

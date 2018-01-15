@@ -22,21 +22,17 @@ int main(int argc, char *argv[]) {
 
     if (argc < 2) {
 
-        printf("no port provided");
+        printf("no port provided\n");
+        printf("argv: port, number of threads \n");
+        exit(1);
+    }
+    if(argc <3 ){
+
+        printf("number of pthreads not provided\n");
+        printf("argv: port, number of threads \n");
         exit(1);
     }
     server_prog(argv[1],argv[2]);
-
-
-
-
-
-
-
-
-
-
-
 
 
     clock_t begin = clock();

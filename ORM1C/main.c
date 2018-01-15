@@ -149,6 +149,9 @@ int main(int argc, char *argv[]) {
 
 
 
+
+
+
    // printf("ulazimo u merge\n");
     merge(num_threads,name);
   //  get_filename(&num_threads);

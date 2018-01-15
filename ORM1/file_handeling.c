@@ -34,12 +34,13 @@ void server_prog(char *argv1, char *argv2){
     pthread_t t_main[10];
 
     int num_connections=0;
-    int num_pthreads=5;
+    int num_pthreads=atoi(argv2);
+
     pthread_attr_t attr;
     char buffer[BUFFER_SIZE];
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-    struct name_s name_s1[num_connections];
+    struct name_s name_s1[10];
 
 
     // uint16_t portnum=(uint16_t)atoi(argv[1]);
@@ -47,8 +48,14 @@ void server_prog(char *argv1, char *argv2){
 
 
     FILE *fp;
-    char *filename="2.avi";
+    char *filename="rc.jpg";
     fp=fopen(filename,"r");
+    if(fp==NULL){
+
+
+        printf("could not open file \n");
+
+    }
     long	file_size;
     fseek(fp, 0, SEEK_END);
     file_size = ftell(fp);
@@ -172,16 +179,37 @@ void server_prog(char *argv1, char *argv2){
         send_filename(&name_s1[num_connections]);
 
 
-        //using the server socket to make other sockets
+        //using the server socket to make other sockets because we closed the other socket
         name_s1[num_connections].socket=sockfd;
 
-        pthread_create(&t_main[num_connections],NULL,new_connection,&name_s1[num_connections]);
+       int ret= pthread_create(&t_main[num_connections],NULL,new_connection,&name_s1[num_connections]);
+
+        if (ret!=0){
+
+            perror("error creating threads");
+            exit(1);
+        }
         printf("pthread_created %d \n",num_connections);
 
 
-      //    pthread_join(t_main[num_connections],NULL);
+
+
+        if(num_connections==9){
+            pthread_join(t_main[num_connections],NULL);
+        }
         num_connections++;
+
     }
+
+
+   /* printf("thread_joined\n");
+    num_connections--;
+    int ret= pthread_join(t_main[num_connections],NULL);
+    if (ret!=0){
+
+        perror("joining threads");
+        exit(1);
+    }*/
 
 
 
@@ -198,7 +226,7 @@ void *get_in_addr(struct sockaddr *sa)
 void * new_connection(void *data_temp){
 
     pthread_attr_t attr;
-
+    printf("new_connection\n");
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
     char s[INET6_ADDRSTRLEN];
@@ -225,7 +253,7 @@ void * new_connection(void *data_temp){
 
 
     /// u zavisnosti od broja konekcija delimo file na toliko delova
-   // printf("file_size %li \n",file_size);
+    printf("file_size %li \n",file_size);
     float numb_packets=0;
 
 
@@ -249,8 +277,10 @@ void * new_connection(void *data_temp){
         data_s1[i].pack_number=i;
         //  new_file(&data_s1[i]);
         {  // main accept() loop
+            printf("accept loop in new_connection\n");
             sin_size = sizeof their_addr;
             pthread_mutex_lock(&m);
+            printf("mutex_lock\n");
             data_s1[i].socket = accept(name_s1.socket, (struct sockaddr *) &their_addr, &sin_size);
             if (data_s1[i].socket == -1) {
                 perror("accept");
@@ -286,6 +316,13 @@ void * new_connection(void *data_temp){
         printf("Main: completed join with thread %d having a status of %ld\n",i,(long)status);
     }
 
+    for(int i=0;i<name_s1.thread_num;i++){
+
+
+        close( data_s1[i].socket);
+
+    }
+
 
 
 
@@ -300,7 +337,6 @@ void * new_file(void *data_temp){
         char write_b[4];
         FILE *fp;
         ssize_t ret_1;
-      ///  char *filename=malloc(64);
         struct data_s data_s1;
         data_s1=  *((struct data_s *)data_temp);
         int socket=data_s1.socket;
@@ -308,7 +344,7 @@ void * new_file(void *data_temp){
         int koliko_treba;
         int koliko_treba_1;
         size_t read_temp=0;
-      ///  strcpy(filename,data_s1.filename);
+
 
 
 
@@ -323,7 +359,7 @@ void * new_file(void *data_temp){
     if(data_s1.file_position_b!=0){
        koliko_treba=data_s1.file_position_e-data_s1.file_position_b;
         koliko_treba_1=data_s1.file_position_e-data_s1.file_position_b;
-       //koliko_treba=data_s1.file_position_e-data_s1.file_position_b+1;
+
     }
     else{
 
@@ -635,12 +671,7 @@ void * new_file(void *data_temp){
 
             exit(1);
         }
-     /*   if (strcmp(buffer2, buffer) != 0) {
 
-            printf("NOPE  \n");
-            fclose(fp);
-            exit(1);
-        }*/
 
 
 

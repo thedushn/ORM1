@@ -57,14 +57,14 @@ void merge (const int broj_thread,char *filename){
             names[t]=(char *) malloc(64);
             strcpy(names[t],d_file->d_name);
             temp1=strchr(temp,'.');
-            printf("Names %s\n",names[t]);
+         //   printf("Names %s\n",names[t]);
                 t++;
             //  printf("TEMP %s\n",temp1);
             temp1=++temp1;
 
-            printf("files %s\n",temp);
+        //    printf("files %s\n",temp);
 
-            printf("TEMP %s\n",temp1);
+        //    printf("TEMP %s\n",temp1);
          //   int n=atoi(temp1);
            int  val =(int) strtol(temp1, &endptr, 0);
             if ((errno == ERANGE && (val == LONG_MAX || val == LONG_MIN))
@@ -80,7 +80,7 @@ void merge (const int broj_thread,char *filename){
                 closedir(dir);
                 exit(EXIT_FAILURE);
             }
-            printf("N %d \n",val);
+    //        printf("N %d \n",val);
 
 
 
@@ -96,10 +96,10 @@ void merge (const int broj_thread,char *filename){
 
   sort(names,broj_thread);
     for(int y=0 ;y<broj_thread;y++){
-        printf("Names %s\n",names[y]);
+   //     printf("Names %s\n",names[y]);
 
     }
-    printf("I %d\n",t);
+  //  printf("I %d\n",t);
     closedir(dir);
 
     // Open two files to be merged
@@ -112,7 +112,7 @@ void merge (const int broj_thread,char *filename){
         char buffer[BUFFER_SIZE];
      static int brojac =2;
      fp_temp= fopen(names[0], "rb");
-     printf("Trying to open %s\n",names[0]);
+   //  printf("Trying to open %s\n",names[0]);
      char temp[64];
     // char *temp=malloc(256);
      char *temp1;
@@ -169,14 +169,14 @@ void merge (const int broj_thread,char *filename){
     int ret = remove(names[1]);
 
      if(ret == 0) {
-         printf("File deleted successfully\n");
+     //    printf("File deleted successfully\n");
      } else {
          printf("Error: unable to delete the file\n");
      }
       ret = remove(names[0]);
 
      if(ret == 0) {
-         printf("File deleted successfully\n");
+   //      printf("File deleted successfully\n");
      } else {
          printf("Error: unable to delete the file\n");
      }
@@ -210,7 +210,7 @@ void merge (const int broj_thread,char *filename){
     }
     free(names);
 
-    printf("spojili smo \n");
+ //   printf("spojili smo \n");
 
 
 
@@ -228,7 +228,7 @@ void get_filename(void * socket_tmp, char *name, int * thread_num){
         memset(buffer,0,BUFFER_SIZE);
     ret = recv(socket,buffer,BUFFER_SIZE, 0);
     //  koliko_bytes+=ret;
-    printf("Return value : [%d]\n",(int)ret);
+  //  printf("Return value : [%d]\n",(int)ret);
     if(ret<0){
 
         printf("error receving data\n %d",(int)ret);
@@ -296,7 +296,7 @@ void get_filename(void * socket_tmp, char *name, int * thread_num){
     }
 
     stpcpy(name,buffer+4);
-
+    printf("filename %s\n",name);
 
    *thread_num=thread_number;
 
@@ -324,7 +324,7 @@ void *create_file(void * socket_tmp){
     socket = *(int *) socket_tmp;
     ret = recv(socket,buffer,BUFFER_SIZE, 0);
   //  koliko_bytes+=ret;
-    printf("Return value : [%d]\n",(int)ret);
+//    printf("Return value : [%d]\n",(int)ret);
     if(ret<0){
 
         printf("error receving data\n %d",(int)ret);
@@ -379,7 +379,7 @@ void *create_file(void * socket_tmp){
 
 
     sscanf(buffer,"%s %d %d %d %s",filename,&file_size,&filename_b,&filename_e,filename_f);
-    printf("File size %d\n",file_size);
+  //  printf("File size %d\n",file_size);
     koliko_treba_upisati=(filename_e-filename_b);
     //ret = recv(socket,buffer,BUFFER_SIZE, 0);
    // printf("Return value : [%d]",(int)ret);
@@ -478,7 +478,7 @@ void *create_file(void * socket_tmp){
             if( (t=strcmp(buffer,"end of file"))==0) {
                 printf("dosli smo do kraja file\n");
                 fclose(fp);
-                //close(fp1);
+
                 break;
             }
 

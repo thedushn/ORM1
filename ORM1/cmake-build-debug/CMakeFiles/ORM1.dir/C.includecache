@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1/file_handeling.c
+/home/dushn/Desktop/ffs/ORM1-master/ORM1/file_handeling.c
 errno.h
 -
 fcntl.h
@@ -26,9 +26,9 @@ signal.h
 netdb.h
 -
 file_handeling.h
-/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1/file_handeling.h
+/home/dushn/Desktop/ffs/ORM1-master/ORM1/file_handeling.h
 
-/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1/file_handeling.h
+/home/dushn/Desktop/ffs/ORM1-master/ORM1/file_handeling.h
 stdio.h
 -
 sys/socket.h
@@ -46,9 +46,9 @@ pthread.h
 wait.h
 -
 
-/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1/main.c
+/home/dushn/Desktop/ffs/ORM1-master/ORM1/main.c
 file_handeling.h
-/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1/file_handeling.h
+/home/dushn/Desktop/ffs/ORM1-master/ORM1/file_handeling.h
 stdio.h
 -
 errno.h
@@ -66,7 +66,7 @@ stdlib.h
 time.h
 -
 pthread.h
-/home/dushn/Desktop/GITORM1/thenewist/ORM1/ORM1/pthread.h
+/home/dushn/Desktop/ffs/ORM1-master/ORM1/pthread.h
 arpa/inet.h
 -
 math.h

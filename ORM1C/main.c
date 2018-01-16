@@ -54,11 +54,11 @@ int  conection(char * argv1, char * argv2){
         printf("Error creating socket!\n");
         exit(1);
     }
-    printf("Socket created \n");
+ //   printf("Socket created \n");
 
 
 
-    printf("Connected to the server...\n");
+   // printf("Connected to the server...\n");
     free(servinfo);
     return newsockfd;
 };
@@ -122,7 +122,7 @@ int main(int argc, char *argv[]) {
 
     for(int i=0;i<num_threads;i++){
 
-            printf("Socket %d\n",socket_num[i]);
+        //    printf("Socket %d\n",socket_num[i]);
         int ret2=   pthread_create(&t[i],NULL,create_file,&socket_num[i]);
         if(ret2!=0){
 
@@ -143,20 +143,16 @@ int main(int argc, char *argv[]) {
             printf("ERROR; return code from pthread_join() is %d\n", rc);
             exit(-1);
         }
-        printf("Main: completed join with thread %d having a status of %ld \n",i,(long)status);
+      //  printf("Main: completed join with thread %d having a status of %ld \n",i,(long)status);
     }
-
-
-
-
 
 
 
    // printf("ulazimo u merge\n");
     merge(num_threads,name);
   //  get_filename(&num_threads);
-    printf("name %s\n",name);
-    printf("sve proslo kako treba\n");
+    printf("name  %s, num_threads %d\n",name,num_threads);
+ //   printf("sve proslo kako treba\n");
         for(int i=0;i<num_threads;i++){
 
             close(socket_num[i]);

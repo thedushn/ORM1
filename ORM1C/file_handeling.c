@@ -33,9 +33,9 @@ void merge (const int broj_thread,char *filename){
     DIR *dir;
     struct dirent *d_file;
     char cwd[1024];
- //   char *names[broj_thread];
-  //  names[broj_thread]=(char *) malloc(64);
-    char **names= (char **)malloc(broj_thread*(64) * sizeof(char *));
+    char *names[broj_thread];
+    names[broj_thread]=(char *) malloc(64);
+   // char **names= (char **)malloc(broj_thread*(64) * sizeof(char *));
     char *names_temp="temp";
     //char (*file_name_array)[64];
     getcwd(cwd, sizeof(cwd));
@@ -96,7 +96,7 @@ void merge (const int broj_thread,char *filename){
 
   sort(names,broj_thread);
     for(int y=0 ;y<broj_thread;y++){
-   //     printf("Names %s\n",names[y]);
+      //  printf("Names %s\n",names[y]);
 
     }
   //  printf("I %d\n",t);
@@ -184,12 +184,14 @@ void merge (const int broj_thread,char *filename){
 
      memset(names[0],0,64);
     // names[0]="final";
-     strcpy(names[0],name_buffer);
+     memmove(names[0],name_buffer,64);
    /*  if(broj_thread==brojac){
 
          names[1]=={""};
      }*/
-         names[1]=names[brojac];
+        memset(names[1],0,64);
+     strcpy(names[1],names[brojac]);
+     //    names[1]=names[brojac];
          brojac++;
 
 
@@ -204,11 +206,14 @@ void merge (const int broj_thread,char *filename){
     rename(names[0],filename);
     for(int i=0;i<broj_thread;i++){
     //for(int i=0;i<=broj_thread;i++){
+        if(names[i]!=NULL){
 
-        free(names[i]);
+            free(names[i]);
+        }
+
 
     }
-    free(names);
+//    free(names);
 
  //   printf("spojili smo \n");
 
@@ -288,7 +293,7 @@ void get_filename(void * socket_tmp, char *name, int * thread_num){
     if (fd <0 ) {
        // perror("open");
         close (fd);
-       printf("File doenst exist %d \n",fd);
+     //  printf("File doenst exist %d \n",fd);
     }
     else{
         close (fd);
@@ -296,7 +301,7 @@ void get_filename(void * socket_tmp, char *name, int * thread_num){
     }
 
     stpcpy(name,buffer+4);
-    printf("filename %s\n",name);
+ //   printf("filename %s\n",name);
 
    *thread_num=thread_number;
 
@@ -476,7 +481,7 @@ void *create_file(void * socket_tmp){
 
            // printf("Buffer %s\n",buffer);
             if( (t=strcmp(buffer,"end of file"))==0) {
-                printf("dosli smo do kraja file\n");
+               // printf("dosli smo do kraja file\n");
                 fclose(fp);
 
                 break;
@@ -514,10 +519,10 @@ void *create_file(void * socket_tmp){
 
 
     //fclose(fp);
-    printf("Buffer [%s]\n",buffer);
-    printf("koliko bytes upisano   %d\n",(int)upisano_temp);
-    printf("File size              %d\n",file_size);
-    printf("koliko bytes primljeno %d\n",koliko_bytes);
+   // printf("Buffer [%s]\n",buffer);
+   // printf("koliko bytes upisano   %d\n",(int)upisano_temp);
+   // printf("File size              %d\n",file_size);
+  //  printf("koliko bytes primljeno %d\n",koliko_bytes);
 
     fp=fopen(buffer_3,"r");
 
@@ -528,7 +533,7 @@ void *create_file(void * socket_tmp){
 
     fclose(fp);
 
-    printf("file_size %d \n",file_size);
+   // printf("file_size %d \n",file_size);
 
 /*    memset(buffer,0,BUFFER_SIZE);
     strcpy(buffer,"stiglo sve");
@@ -556,6 +561,6 @@ void *create_file(void * socket_tmp){
    // free(filename_b);
     free(filename_f);
 
-    printf("exiting the thread\n");
+  //  printf("exiting the thread\n");
     return 0;
 };

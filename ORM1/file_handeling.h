@@ -24,7 +24,7 @@ void *new_file(void *socket_info);
 void test();
 void * new_connection(void * data_temp);
 void *get_in_addr(struct sockaddr *sa);
-void server_prog(char * argv1, char *argv2);
+void server_prog(char * argv1, char *argv2, char *argv3);
 
 
 

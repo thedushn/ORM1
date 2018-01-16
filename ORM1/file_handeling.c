@@ -28,19 +28,21 @@ void sigchld_handler(int s)
 
     errno = saved_errno;
 }
-void server_prog(char *argv1, char *argv2){
 
 
-    pthread_t t_main[10];
+void server_prog(char *argv1, char *argv2, char *argv3){
 
-    int num_connections=0;
+    int num_connections=10;
+    pthread_t t_main[num_connections];
+
+
     int num_pthreads=atoi(argv2);
 
     pthread_attr_t attr;
     char buffer[BUFFER_SIZE];
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-    struct name_s name_s1[10];
+    struct name_s name_s1[num_connections];
 
 
     // uint16_t portnum=(uint16_t)atoi(argv[1]);
@@ -48,7 +50,7 @@ void server_prog(char *argv1, char *argv2){
 
 
     FILE *fp;
-    char *filename="rc.jpg";
+    char *filename=argv3;
     fp=fopen(filename,"r");
     if(fp==NULL){
 
@@ -150,66 +152,76 @@ void server_prog(char *argv1, char *argv2){
 
     printf("server: waiting for connections...\n");
 
-    while(num_connections <10)  {
+  //  while(i !=10)  {
+    for(int i=0 ;i<10;i++){
 
 
-        if(num_connections>0){
+        if(i>0){
            printf("cekamo\n");
             pthread_cond_wait (&cond, &m);
-         //   printf("prosli smo cekanje\n");
+            printf("prosli smo cekanje\n");
         }
         {  // main accept() loop
             printf("main accept loop\n");
             sin_size = sizeof their_addr;
-            name_s1[num_connections].socket = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
-            if (name_s1[num_connections].socket == -1) {
+            pthread_mutex_trylock(&m);
+            name_s1[i].socket = accept(sockfd, (struct sockaddr *) &their_addr, &sin_size);
+            if (name_s1[i].socket == -1) {
                 perror("accept");
 
             }
         }
+        pthread_mutex_unlock(&m);
         inet_ntop(their_addr.ss_family,
                   get_in_addr((struct sockaddr *) &their_addr),
                   s, sizeof s);
         printf("server: got connection from %s\n", s);
-        name_s1[num_connections].thread_num=(uint16_t)num_pthreads;
-        strcpy(name_s1[num_connections].filename,filename);
+        name_s1[i].thread_num=(uint16_t)num_pthreads;
+        strcpy(name_s1[i].filename,filename);
 
 
         //sending the filename
-        send_filename(&name_s1[num_connections]);
+        send_filename(&name_s1[i]);
 
 
         //using the server socket to make other sockets because we closed the other socket
-        name_s1[num_connections].socket=sockfd;
+        name_s1[i].socket=sockfd;
 
-       int ret= pthread_create(&t_main[num_connections],NULL,new_connection,&name_s1[num_connections]);
+       int ret= pthread_create(&t_main[i],NULL,new_connection,&name_s1[i]);
 
         if (ret!=0){
 
             perror("error creating threads");
             exit(1);
         }
-        printf("pthread_created %d \n",num_connections);
+        printf("pthread_created %d \n",i);
 
 
 
 
-        if(num_connections==9){
-            pthread_join(t_main[num_connections],NULL);
-        }
-        num_connections++;
+  /*      if(i==1){
+            pthread_join(t_main[i],NULL);
+        }*/
+       // i++;
 
     }
 
+    for(int i =0;i<num_connections;i++){
+        printf("thread joined %d\n",i);
+        pthread_join(t_main[i],NULL);
+    }
+
+
 
    /* printf("thread_joined\n");
-    num_connections--;
-    int ret= pthread_join(t_main[num_connections],NULL);
+    i--;
+    int ret= pthread_join(t_main[i],NULL);
     if (ret!=0){
 
         perror("joining threads");
         exit(1);
     }*/
+
 
 
 
@@ -279,7 +291,7 @@ void * new_connection(void *data_temp){
         {  // main accept() loop
             printf("accept loop in new_connection\n");
             sin_size = sizeof their_addr;
-            pthread_mutex_lock(&m);
+            pthread_mutex_trylock(&m);
             printf("mutex_lock\n");
             data_s1[i].socket = accept(name_s1.socket, (struct sockaddr *) &their_addr, &sin_size);
             if (data_s1[i].socket == -1) {
@@ -287,6 +299,7 @@ void * new_connection(void *data_temp){
 
             }
             pthread_mutex_unlock(&m);
+            printf("mutex_unlock\n");
         }
 
         inet_ntop(their_addr.ss_family,
@@ -697,15 +710,23 @@ void * send_filename(void *socket_tmp){
 
     printf("usli smo u send_filename\n");
 
-    struct name_s name_s1=*(struct name_s *) socket_tmp;
-    int socket= name_s1.socket;
+    ssize_t ret=0;
+    int socket=0;
     char buffer[BUFFER_SIZE];
+    char buffer2[BUFFER_SIZE];
     char numbers[4];
+    struct name_s name_s1=*(struct name_s *) socket_tmp;
+
+
+
+    socket= name_s1.socket;
     sprintf(numbers,"%" SCNu16 "",name_s1.thread_num);
     memcpy(buffer,numbers,sizeof(numbers));
     memcpy(buffer+sizeof(numbers),name_s1.filename,sizeof(name_s1.filename));
-//    strcpy(buffer,name_s1.filename);
-    ssize_t ret= send(socket,buffer,BUFFER_SIZE,0);
+
+
+
+     ret= send(socket,buffer,BUFFER_SIZE,0);
     if(ret<BUFFER_SIZE) {
         size_t velicina = BUFFER_SIZE;
         velicina -= ret;
@@ -722,12 +743,12 @@ void * send_filename(void *socket_tmp){
             }
         }
     }
-    char buffer2[BUFFER_SIZE];
+
     memset(buffer2,0,BUFFER_SIZE);
     ssize_t  ret_1 =recv(socket,buffer2,BUFFER_SIZE,0);
     if (ret_1 < 0) {
 
-        printf("error receing data\n %d", (int) ret_1);
+        printf("error receving data\n %d", (int) ret_1);
         exit(1);
     }
     if(ret_1==0){

@@ -54,11 +54,7 @@ int  conection(char * argv1, char * argv2){
         printf("Error creating socket!\n");
         exit(1);
     }
- //   printf("Socket created \n");
 
-
-
-   // printf("Connected to the server...\n");
     free(servinfo);
     return newsockfd;
 };
@@ -70,7 +66,7 @@ int main(int argc, char *argv[]) {
 
 
 
-   /* if(argc<3){
+    if(argc<3){
 
         printf("port not provided \n");
         printf("ip_address not provided \n");
@@ -86,7 +82,7 @@ int main(int argc, char *argv[]) {
         printf("argv failed %s",argv[2]);
         exit(1);
 
-    }*/
+    }
     clock_t begin = clock();
 
 
@@ -105,7 +101,7 @@ int main(int argc, char *argv[]) {
     char *name=(char *)calloc(64,sizeof(char));
     int num_threads=0;
     get_filename(&socket_file,name,&num_threads );
-  //  pthread_t  t[num_threads];
+
     pthread_t *t ;
     t=(pthread_t *)malloc(num_threads * sizeof(pthread_t ));
     int socket_num[num_threads];
@@ -122,7 +118,7 @@ int main(int argc, char *argv[]) {
 
     for(int i=0;i<num_threads;i++){
 
-        //    printf("Socket %d\n",socket_num[i]);
+
         int ret2=   pthread_create(&t[i],NULL,create_file,&socket_num[i]);
         if(ret2!=0){
 
@@ -143,16 +139,16 @@ int main(int argc, char *argv[]) {
             printf("ERROR; return code from pthread_join() is %d\n", rc);
             exit(-1);
         }
-      //  printf("Main: completed join with thread %d having a status of %ld \n",i,(long)status);
+
     }
 
 
 
-   // printf("ulazimo u merge\n");
+
     merge(num_threads,name);
-  //  get_filename(&num_threads);
+
     printf("name  %s, num_threads %d\n",name,num_threads);
- //   printf("sve proslo kako treba\n");
+
         for(int i=0;i<num_threads;i++){
 
             close(socket_num[i]);

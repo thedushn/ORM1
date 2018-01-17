@@ -1,0 +1,60 @@
+name  15.jpg, num_threads 7
+TIME spent 0.219867 
+name  15.jpg, num_threads 7
+TIME spent 0.268019 
+name  15.jpg, num_threads 7
+TIME spent 0.248990 
+name  15.jpg, num_threads 7
+TIME spent 0.255330 
+name  15.jpg, num_threads 7
+TIME spent 0.252506 
+name  15.jpg, num_threads 7
+TIME spent 0.181860 
+name  15.jpg, num_threads 7
+TIME spent 0.239099 
+name  15.jpg, num_threads 7
+TIME spent 0.234143 
+name  15.jpg, num_threads 7
+TIME spent 0.217581 
+name  15.jpg, num_threads 7
+TIME spent 0.233365 
+name  116.avi, num_threads 7
+TIME spent 1.726492 
+name  116.avi, num_threads 7
+TIME spent 1.814062 
+name  116.avi, num_threads 7
+TIME spent 1.515722 
+name  116.avi, num_threads 7
+TIME spent 1.759473 
+name  116.avi, num_threads 7
+TIME spent 1.639229 
+name  116.avi, num_threads 7
+TIME spent 1.542950 
+name  116.avi, num_threads 7
+TIME spent 1.716781 
+name  116.avi, num_threads 7
+TIME spent 1.640033 
+name  116.avi, num_threads 7
+TIME spent 1.608958 
+name  116.avi, num_threads 7
+TIME spent 1.708665 
+name  673.avi, num_threads 7
+TIME spent 9.783466 
+name  673.avi, num_threads 7
+TIME spent 10.751750 
+name  673.avi, num_threads 7
+TIME spent 10.227532 
+name  673.avi, num_threads 7
+TIME spent 10.476226 
+name  673.avi, num_threads 7
+TIME spent 10.330746 
+name  673.avi, num_threads 7
+TIME spent 10.727259 
+name  673.avi, num_threads 7
+TIME spent 9.098672 
+name  673.avi, num_threads 7
+TIME spent 9.469878 
+name  673.avi, num_threads 7
+TIME spent 9.329552 
+name  673.avi, num_threads 7
+TIME spent 10.476272 

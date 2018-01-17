@@ -1,0 +1,35 @@
+name 15.jpg, thread_num 1 float_prosek 0.146232
+name 116.avi, thread_num 1 float_prosek 1.239154
+name 673.avi, thread_num 1 float_prosek 7.465765
+
+name 15.jpg, thread_num 2 float_prosek 0.168422
+name 116.avi, thread_num 2 float_prosek 1.296689
+name 673.avi, thread_num 2 float_prosek 8.441229
+
+name 15.jpg, thread_num 3 float_prosek 0.177651
+name 116.avi, thread_num 3 float_prosek 1.346797
+name 673.avi, thread_num 3 float_prosek 8.878885
+
+name 15.jpg, thread_num 4 float_prosek 0.189733
+name 116.avi, thread_num 4 float_prosek 1.510581
+name 673.avi, thread_num 4 float_prosek 8.263971
+
+name 15.jpg, thread_num 5 float_prosek 0.205023
+name 116.avi, thread_num 5 float_prosek 1.525625
+name 673.avi, thread_num 5 float_prosek 8.974012
+
+name 15.jpg, thread_num 6 float_prosek 0.218129
+name 116.avi, thread_num 6 float_prosek 1.567616
+name 673.avi, thread_num 6 float_prosek 9.636809
+
+name 15.jpg, thread_num 7 float_prosek 0.235076
+name 116.avi, thread_num 7 float_prosek 1.667237
+name 673.avi, thread_num 7 float_prosek 10.067136
+
+name 15.jpg, thread_num 8 float_prosek 0.234757
+name 116.avi, thread_num 8 float_prosek 1.773576
+name 673.avi, thread_num 8 float_prosek 11.037144
+
+name 15.jpg, thread_num 9 float_prosek 0.249784
+name 116.avi, thread_num 9 float_prosek 1.870974
+name 673.avi, thread_num 9 float_prosek 11.370752

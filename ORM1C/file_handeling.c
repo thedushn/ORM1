@@ -17,7 +17,7 @@
 
 #define BUFFER_SIZE 1400
 #define BUFFER_SIZE2 1404
-#define BUFFER_SIZE3 1000000
+#define BUFFER_SIZE3 2000000
 static int myCompare (const void * a, const void * b)
 {
     return strcmp (*(const char **) a, *(const char **) b);

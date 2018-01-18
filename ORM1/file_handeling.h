@@ -40,8 +40,6 @@ struct data_s{
     int pack_number;
     int file_position_b;
     int file_position_e;
-    int file_size;
-    int numb_packets;
     char filename[64];
 
 

@@ -48,6 +48,8 @@ void log_stats(char * filename){
         }
     }
 
+    printf("name %s thread_num %d float_prosek %f\n",name,thread_numb,f1/10);
+
 
     fclose(fp);
 
@@ -74,30 +76,11 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
     server_prog(argv[1],argv[2],argv[3]);
-   /* log_stats("log.txt");
-    log_stats("log1.txt");
+  /*  log_stats("log1.txt");
     log_stats("log2.txt");
-*/
-    clock_t begin = clock();
+    log_stats("log3.txt");*/
 
 
-/* here, do your time-consuming job */
-
-
-
-    clock_t end = clock();
-    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-
-        printf("TIME spent %f \n",time_spent);
-
-
-
-
-    printf("sve proslo kako treba\n");
-
-  //  printf("file_size %li \n",file_size);
- //  test();
-  //  free(data_s1);
 
 
 return 0;
